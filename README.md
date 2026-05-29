@@ -29,7 +29,7 @@ python governance_replay.py --input your_updates.json --full --no-open
 Run in scheduled/stateful mode:
 
 ```powershell
-python governance_replay.py --input input_updates.json
+python governance_replay.py --input samples/00_default_example/input_updates.json
 ```
 
 Stateful mode analyzes only records newer than the last saved timestamp and writes a new `outputs/last_run_state.json`.
@@ -211,19 +211,19 @@ If the current run has more new records, pressure increased. If any metric drops
 Create a fresh test input:
 
 ```powershell
-python governance_stream_generator.py --output input_updates.json --reset --count 7 --seed 1
+python governance_stream_generator.py --output outputs/generated_updates.json --reset --count 7 --seed 1
 ```
 
 Append more updates:
 
 ```powershell
-python governance_stream_generator.py --output input_updates.json --count 10 --seed 2
+python governance_stream_generator.py --output outputs/generated_updates.json --count 10 --seed 2
 ```
 
 Then run:
 
 ```powershell
-python governance_replay.py
+python governance_replay.py --input outputs/generated_updates.json --full --no-open
 ```
 
 ## Project Files
@@ -232,7 +232,6 @@ python governance_replay.py
 |---|---|
 | `governance_replay.py` | main parser, replay engine, calibration logic, pressure comparison, and output writer |
 | `governance_stream_generator.py` | optional fake input generator for testing pressure |
-| `input_updates.json` | default messy input file |
 | `escalation_rules.json` | visible deterministic rules |
 | `dashboard.css` | dashboard stylesheet |
 | `samples/` | curated evidence suite |

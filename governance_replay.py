@@ -984,7 +984,11 @@ def main():
     parser = argparse.ArgumentParser(
         description="Replay messy governance updates and calibrate escalation decisions."
     )
-    parser.add_argument("--input", default="input_updates.json", help="Input JSON file.")
+    parser.add_argument(
+        "--input",
+        default="samples/00_default_example/input_updates.json",
+        help="Input JSON file.",
+    )
     parser.add_argument("--input-url", default=None, help="Read raw text updates from a URL.")
     parser.add_argument(
         "--limit-lines",

@@ -13,7 +13,7 @@ It is not used as a technical rule. The implemented scope is operational drift m
 ## Architecture
 
 ```text
-input_updates.json
+samples/00_default_example/input_updates.json
         |
         v
 governance_replay.py
@@ -28,7 +28,7 @@ samples evidence suite
 
 ## Inspectable Proof
 
-- Raw messy inputs: `input_updates.json`
+- Default messy input: `samples/00_default_example/input_updates.json`
 - Rule file: `escalation_rules.json`
 - Curated evidence suite: `samples/`
 - Sample parsed outputs: `samples/*/structured_updates.json`
