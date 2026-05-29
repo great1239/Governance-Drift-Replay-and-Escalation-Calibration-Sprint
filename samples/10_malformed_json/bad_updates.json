@@ -1,0 +1,12 @@
+[
+  {
+    "case_id": "BAD-001",
+    "timestamp": "2026-05-29T11:00:00Z",
+    "update": "Payments latency degraded. Missing trace."
+  },
+  {
+    "case_id": "BAD-002",
+    "timestamp": "2026-05-29T11:05:00Z"
+    "update": "Missing comma before update field makes this invalid JSON."
+  }
+]

@@ -1,6 +1,6 @@
 # Sample Evidence Suite
 
-This folder contains inspectable proof cases. Each sample starts with messy input and includes the generated JSON, CSV, dashboard, screenshot, and notes.
+This folder contains inspectable proof cases. Most samples start with messy input and include the generated JSON, CSV, dashboard, screenshot, and notes. The malformed JSON sample is a failure-only proof case.
 
 ## Start Here
 
@@ -113,6 +113,15 @@ Input: [input](09_conflict_handling/input_updates.json)
 Dashboard: [dashboard](09_conflict_handling/dashboard.html)  
 Screenshot: [screenshot](09_conflict_handling/screenshot.png)
 
+### 10 Malformed JSON
+
+Covers: invalid JSON failure handling  
+Input size: intentionally invalid  
+Main proof: clear parse error, no guessed output  
+Notes: [notes](10_malformed_json/notes.md)  
+Bad input: [bad input](10_malformed_json/bad_updates.json)  
+Expected error: [expected error](10_malformed_json/expected_error.txt)
+
 ## What Each Sample Contains
 
 Most sample folders contain:
@@ -138,6 +147,16 @@ last_run_state.json
 ```
 
 Those two files are needed because pressure comparison is a two-run scenario.
+
+`10_malformed_json` contains:
+
+```text
+bad_updates.json
+expected_error.txt
+notes.md
+```
+
+It does not contain dashboard outputs because the correct behavior is to stop before generating outputs.
 
 ## Reproduction Pattern
 

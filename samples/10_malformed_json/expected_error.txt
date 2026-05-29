@@ -1,0 +1,5 @@
+Command:
+python governance_replay.py --input samples/10_malformed_json/bad_updates.json --full --no-open
+
+Expected terminal output:
+Could not read valid JSON from samples\10_malformed_json\bad_updates.json: Expecting ',' delimiter: line 10 column 5 (char 210)

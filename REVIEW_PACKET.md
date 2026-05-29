@@ -23,6 +23,12 @@ Messy operational updates can be parsed into structured fields, classified with 
 5. Inspect the active rule snapshot:
    [samples/00_default_example/rules_used.json](samples/00_default_example/rules_used.json)
 
+6. Inspect the proof matrix:
+   [PROOF_MATRIX.md](PROOF_MATRIX.md)
+
+7. Inspect raw-to-parsed examples:
+   [PARSER_EXAMPLES.md](PARSER_EXAMPLES.md)
+
 ## How To Run
 
 Run the default full example:
@@ -49,6 +55,12 @@ Stateful mode analyzes only records newer than the previous saved timestamp and 
 
 Main program:
 [governance_replay.py](governance_replay.py)
+
+Concrete proof matrix:
+[PROOF_MATRIX.md](PROOF_MATRIX.md)
+
+Raw-to-parsed examples:
+[PARSER_EXAMPLES.md](PARSER_EXAMPLES.md)
 
 Readable rule explanation:
 [RULES.md](RULES.md)
@@ -97,6 +109,9 @@ Each dashboard contains the compressed run summary, drift counts, calibration co
 
 Rule/config visibility:
 Rules are visible in `RULES.md`, `escalation_rules.json`, and every generated `rules_used.json`.
+
+Operational proof density:
+`PROOF_MATRIX.md` maps each requirement to a concrete file, case ID, and field. `PARSER_EXAMPLES.md` shows raw input converted into structured output.
 
 Deterministic replay:
 Each run evaluates the selected input twice and records whether both passes match.
@@ -197,6 +212,13 @@ Parsed JSON: [structured output](samples/09_conflict_handling/structured_updates
 Dashboard: [dashboard](samples/09_conflict_handling/dashboard.html)  
 Screenshot: [screenshot](samples/09_conflict_handling/screenshot.png)
 
+### 10 Malformed JSON
+
+Proves: malformed input is rejected instead of guessed  
+Notes: [notes](samples/10_malformed_json/notes.md)  
+Bad input: [bad input](samples/10_malformed_json/bad_updates.json)  
+Expected error: [expected error](samples/10_malformed_json/expected_error.txt)
+
 ## Reproduction Commands
 
 Reproduce one sample:
@@ -224,6 +246,9 @@ python governance_replay.py --input samples/07_pressure_increase/input_updates.j
 - [ ] Deterministic replay result is visible
 - [ ] Pressure comparison is visible in sample `07_pressure_increase`
 - [ ] Conflict handling is visible in sample `09_conflict_handling`
+- [ ] Malformed JSON handling is visible in sample `10_malformed_json`
+- [ ] Requirement-to-artifact proof is visible in `PROOF_MATRIX.md`
+- [ ] Raw-to-parsed examples are visible in `PARSER_EXAMPLES.md`
 
 ## Known Limitations
 
