@@ -110,7 +110,7 @@ h2 {
 .tables section,
 .case-section {
   padding: 18px;
-  overflow-x: auto;
+  overflow-x: visible;
 }
 
 table {
@@ -135,11 +135,20 @@ th {
 }
 
 .case-table td:last-child {
-  min-width: 220px;
+  min-width: 0;
 }
 
-.compact-text {
-  min-width: 180px;
+.case-table {
+  table-layout: fixed;
+}
+
+.case-table td,
+.case-table th {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.case-table td {
   line-height: 1.35;
 }
 

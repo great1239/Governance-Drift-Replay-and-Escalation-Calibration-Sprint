@@ -108,11 +108,6 @@
             <th>Service</th>
             <th>Status</th>
             <th>Governance Drift</th>
-            <th>All Drift Labels</th>
-            <th>Conflict Handling</th>
-            <th>Operational Drift</th>
-            <th>Expected</th>
-            <th>Actual</th>
             <th>Calibration</th>
             <th>Checks</th>
             <th>Action</th>
@@ -124,11 +119,6 @@
               <td>payments</td>
               <td>blocked</td>
               <td>authority-drift</td>
-              <td class="compact-text">authority-drift, replay-drift, evidence-drift, ownership-drift, dependency-drift, escalation-drift</td>
-              <td class="compact-text">authority-drift selected by drift_priority over replay-drift, evidence-drift, ownership-drift, dependency-drift, escalation-drift</td>
-              <td>authority-risk</td>
-              <td>governance-review</td>
-              <td>none</td>
               <td>under-escalated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="fail">deterministic</span> <span class="check" data-state="fail">governance_safe</span></td>
               <td>hold execution until approval and authorization are visible</td>
@@ -139,11 +129,6 @@
               <td>checkout</td>
               <td>degraded</td>
               <td>replay-drift</td>
-              <td class="compact-text">replay-drift, evidence-drift, escalation-drift</td>
-              <td class="compact-text">replay-drift selected by drift_priority over evidence-drift, escalation-drift</td>
-              <td>replay-risk</td>
-              <td>team-lead</td>
-              <td>service-owner</td>
               <td>under-escalated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="fail">deterministic</span> <span class="check" data-state="fail">governance_safe</span></td>
               <td>rerun replay before treating the decision as stable</td>
@@ -154,11 +139,6 @@
               <td>billing</td>
               <td>blocked</td>
               <td>ownership-drift</td>
-              <td class="compact-text">ownership-drift, dependency-drift</td>
-              <td class="compact-text">ownership-drift selected by drift_priority over dependency-drift</td>
-              <td>integration-risk</td>
-              <td>service-owner</td>
-              <td>service-owner</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>assign an owner before execution continues</td>
@@ -169,11 +149,6 @@
               <td>search</td>
               <td>healthy</td>
               <td>escalation-drift</td>
-              <td class="compact-text">escalation-drift</td>
-              <td class="compact-text">single drift label</td>
-              <td>authority-risk</td>
-              <td>none</td>
-              <td>governance-review</td>
               <td>over-escalated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="fail">governance_safe</span></td>
               <td>correct escalation level before continuing</td>
@@ -184,11 +159,6 @@
               <td>inventory</td>
               <td>unknown</td>
               <td>authority-drift</td>
-              <td class="compact-text">authority-drift, replay-drift, evidence-drift, escalation-drift</td>
-              <td class="compact-text">authority-drift selected by drift_priority over replay-drift, evidence-drift, escalation-drift</td>
-              <td>authority-risk</td>
-              <td>governance-review</td>
-              <td>team-lead</td>
               <td>under-escalated</td>
               <td><span class="check" data-state="fail">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="fail">deterministic</span> <span class="check" data-state="fail">governance_safe</span></td>
               <td>hold execution until approval and authorization are visible</td>
@@ -199,11 +169,6 @@
               <td>auth</td>
               <td>blocked</td>
               <td>escalation-drift</td>
-              <td class="compact-text">dependency-drift, escalation-drift</td>
-              <td class="compact-text">escalation-drift selected by drift_priority over dependency-drift</td>
-              <td>authority-risk</td>
-              <td>service-owner</td>
-              <td>team-lead</td>
               <td>over-escalated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="fail">governance_safe</span></td>
               <td>correct escalation level before continuing</td>
@@ -214,11 +179,6 @@
               <td>unknown</td>
               <td>healthy</td>
               <td>aligned</td>
-              <td class="compact-text">aligned</td>
-              <td class="compact-text">single drift label</td>
-              <td>aligned</td>
-              <td>none</td>
-              <td>none</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>continue with normal monitoring</td>
@@ -229,11 +189,6 @@
               <td>orders</td>
               <td>unknown</td>
               <td>authority-drift</td>
-              <td class="compact-text">authority-drift, replay-drift, escalation-drift</td>
-              <td class="compact-text">authority-drift selected by drift_priority over replay-drift, escalation-drift</td>
-              <td>authority-risk</td>
-              <td>governance-review</td>
-              <td>incident-commander</td>
               <td>under-escalated</td>
               <td><span class="check" data-state="fail">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="fail">deterministic</span> <span class="check" data-state="fail">governance_safe</span></td>
               <td>hold execution until approval and authorization are visible</td>
@@ -244,11 +199,6 @@
               <td>queue</td>
               <td>degraded</td>
               <td>escalation-drift</td>
-              <td class="compact-text">evidence-drift, dependency-drift, escalation-drift</td>
-              <td class="compact-text">escalation-drift selected by drift_priority over evidence-drift, dependency-drift</td>
-              <td>authority-risk</td>
-              <td>team-lead</td>
-              <td>service-owner</td>
               <td>under-escalated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="fail">governance_safe</span></td>
               <td>correct escalation level before continuing</td>
@@ -259,14 +209,116 @@
               <td>unknown</td>
               <td>unknown</td>
               <td>escalation-drift</td>
-              <td class="compact-text">evidence-drift, ownership-drift, escalation-drift</td>
-              <td class="compact-text">escalation-drift selected by drift_priority over evidence-drift, ownership-drift</td>
-              <td>authority-risk</td>
-              <td>team-lead</td>
-              <td>none</td>
               <td>under-escalated</td>
               <td><span class="check" data-state="fail">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="fail">governance_safe</span></td>
               <td>correct escalation level before continuing</td>
+            </tr>
+            </tbody>
+      </table>
+    </section>
+
+    <section class="case-section">
+      <h2>Replay Detail Fields</h2>
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>All Drift Labels</th>
+            <th>Conflict Handling</th>
+            <th>Operational Drift</th>
+            <th>Expected</th>
+            <th>Actual</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>S09-001</td>
+              <td>authority-drift, replay-drift, evidence-drift, ownership-drift, dependency-drift, escalation-drift</td>
+              <td>authority-drift selected by drift_priority over replay-drift, evidence-drift, ownership-drift, dependency-drift, escalation-drift</td>
+              <td>authority-risk</td>
+              <td>governance-review</td>
+              <td>none</td>
+            </tr>
+            
+            <tr>
+              <td>S09-002</td>
+              <td>replay-drift, evidence-drift, escalation-drift</td>
+              <td>replay-drift selected by drift_priority over evidence-drift, escalation-drift</td>
+              <td>replay-risk</td>
+              <td>team-lead</td>
+              <td>service-owner</td>
+            </tr>
+            
+            <tr>
+              <td>S09-003</td>
+              <td>ownership-drift, dependency-drift</td>
+              <td>ownership-drift selected by drift_priority over dependency-drift</td>
+              <td>integration-risk</td>
+              <td>service-owner</td>
+              <td>service-owner</td>
+            </tr>
+            
+            <tr>
+              <td>S09-004</td>
+              <td>escalation-drift</td>
+              <td>single drift label</td>
+              <td>authority-risk</td>
+              <td>none</td>
+              <td>governance-review</td>
+            </tr>
+            
+            <tr>
+              <td>S09-005</td>
+              <td>authority-drift, replay-drift, evidence-drift, escalation-drift</td>
+              <td>authority-drift selected by drift_priority over replay-drift, evidence-drift, escalation-drift</td>
+              <td>authority-risk</td>
+              <td>governance-review</td>
+              <td>team-lead</td>
+            </tr>
+            
+            <tr>
+              <td>S09-006</td>
+              <td>dependency-drift, escalation-drift</td>
+              <td>escalation-drift selected by drift_priority over dependency-drift</td>
+              <td>authority-risk</td>
+              <td>service-owner</td>
+              <td>team-lead</td>
+            </tr>
+            
+            <tr>
+              <td>S09-007</td>
+              <td>aligned</td>
+              <td>single drift label</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+            </tr>
+            
+            <tr>
+              <td>S09-008</td>
+              <td>authority-drift, replay-drift, escalation-drift</td>
+              <td>authority-drift selected by drift_priority over replay-drift, escalation-drift</td>
+              <td>authority-risk</td>
+              <td>governance-review</td>
+              <td>incident-commander</td>
+            </tr>
+            
+            <tr>
+              <td>S09-009</td>
+              <td>evidence-drift, dependency-drift, escalation-drift</td>
+              <td>escalation-drift selected by drift_priority over evidence-drift, dependency-drift</td>
+              <td>authority-risk</td>
+              <td>team-lead</td>
+              <td>service-owner</td>
+            </tr>
+            
+            <tr>
+              <td>S09-010</td>
+              <td>evidence-drift, ownership-drift, escalation-drift</td>
+              <td>escalation-drift selected by drift_priority over evidence-drift, ownership-drift</td>
+              <td>authority-risk</td>
+              <td>team-lead</td>
+              <td>none</td>
             </tr>
             </tbody>
       </table>

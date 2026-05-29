@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T21:21:38.899544+00:00",
+  "generated_at": "2026-05-29T21:28:24.069797+00:00",
   "input_file": "samples\\09_conflict_handling\\input_updates.json",
   "rules_file": "escalation_rules.json",
   "mode": "full",

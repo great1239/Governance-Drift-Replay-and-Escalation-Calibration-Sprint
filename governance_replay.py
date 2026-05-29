@@ -882,6 +882,7 @@ def write_dashboard(path, cases, summary, pressure):
         pressure_rows = "<tr><td colspan=\"2\">No previous run to compare.</td></tr>"
 
     case_rows = []
+    detail_rows = []
     for case in cases:
         checks = " ".join(
             f"<span class=\"check\" data-state=\"{check_state(value)}\">{html.escape(name)}</span>"
@@ -894,14 +895,21 @@ def write_dashboard(path, cases, summary, pressure):
               <td>{html.escape(case["service"])}</td>
               <td>{html.escape(case["system_status"])}</td>
               <td>{html.escape(case["primary_drift"])}</td>
-              <td class="compact-text">{html.escape(', '.join(case["drift_types"]))}</td>
-              <td class="compact-text">{html.escape(case["conflict_resolution"])}</td>
-              <td>{html.escape(case["operational_drift_classification"])}</td>
-              <td>{html.escape(case["expected_escalation"])}</td>
-              <td>{html.escape(case["actual_escalation"])}</td>
               <td>{html.escape(case["calibration"])}</td>
               <td>{checks}</td>
               <td>{html.escape(case["recommended_action"])}</td>
+            </tr>
+            """
+        )
+        detail_rows.append(
+            f"""
+            <tr>
+              <td>{html.escape(case["case_id"])}</td>
+              <td>{html.escape(', '.join(case["drift_types"]))}</td>
+              <td>{html.escape(case["conflict_resolution"])}</td>
+              <td>{html.escape(case["operational_drift_classification"])}</td>
+              <td>{html.escape(case["expected_escalation"])}</td>
+              <td>{html.escape(case["actual_escalation"])}</td>
             </tr>
             """
         )
@@ -984,17 +992,29 @@ def write_dashboard(path, cases, summary, pressure):
             <th>Service</th>
             <th>Status</th>
             <th>Governance Drift</th>
-            <th>All Drift Labels</th>
-            <th>Conflict Handling</th>
-            <th>Operational Drift</th>
-            <th>Expected</th>
-            <th>Actual</th>
             <th>Calibration</th>
             <th>Checks</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>{"".join(case_rows)}</tbody>
+      </table>
+    </section>
+
+    <section class="case-section">
+      <h2>Replay Detail Fields</h2>
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>All Drift Labels</th>
+            <th>Conflict Handling</th>
+            <th>Operational Drift</th>
+            <th>Expected</th>
+            <th>Actual</th>
+          </tr>
+        </thead>
+        <tbody>{"".join(detail_rows)}</tbody>
       </table>
     </section>
   </main>

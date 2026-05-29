@@ -104,11 +104,6 @@
             <th>Service</th>
             <th>Status</th>
             <th>Governance Drift</th>
-            <th>All Drift Labels</th>
-            <th>Conflict Handling</th>
-            <th>Operational Drift</th>
-            <th>Expected</th>
-            <th>Actual</th>
             <th>Calibration</th>
             <th>Checks</th>
             <th>Action</th>
@@ -120,11 +115,6 @@
               <td>checkout</td>
               <td>healthy</td>
               <td>aligned</td>
-              <td class="compact-text">aligned</td>
-              <td class="compact-text">single drift label</td>
-              <td>aligned</td>
-              <td>none</td>
-              <td>none</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>continue with normal monitoring</td>
@@ -135,11 +125,6 @@
               <td>billing</td>
               <td>degraded</td>
               <td>evidence-drift</td>
-              <td class="compact-text">evidence-drift</td>
-              <td class="compact-text">single drift label</td>
-              <td>observability-risk</td>
-              <td>incident-commander</td>
-              <td>incident-commander</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>attach trace, logs, or evidence before review</td>
@@ -150,11 +135,6 @@
               <td>checkout</td>
               <td>degraded</td>
               <td>evidence-drift</td>
-              <td class="compact-text">evidence-drift</td>
-              <td class="compact-text">single drift label</td>
-              <td>observability-risk</td>
-              <td>team-lead</td>
-              <td>team-lead</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>attach trace, logs, or evidence before review</td>
@@ -165,11 +145,6 @@
               <td>inventory</td>
               <td>healthy</td>
               <td>aligned</td>
-              <td class="compact-text">aligned</td>
-              <td class="compact-text">single drift label</td>
-              <td>aligned</td>
-              <td>none</td>
-              <td>none</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>continue with normal monitoring</td>
@@ -180,11 +155,6 @@
               <td>orders</td>
               <td>degraded</td>
               <td>evidence-drift</td>
-              <td class="compact-text">evidence-drift, dependency-drift</td>
-              <td class="compact-text">evidence-drift selected by drift_priority over dependency-drift</td>
-              <td>observability-risk</td>
-              <td>team-lead</td>
-              <td>team-lead</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>attach trace, logs, or evidence before review</td>
@@ -195,11 +165,6 @@
               <td>auth</td>
               <td>healthy</td>
               <td>aligned</td>
-              <td class="compact-text">aligned</td>
-              <td class="compact-text">single drift label</td>
-              <td>aligned</td>
-              <td>none</td>
-              <td>none</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>continue with normal monitoring</td>
@@ -210,11 +175,6 @@
               <td>payments</td>
               <td>degraded</td>
               <td>evidence-drift</td>
-              <td class="compact-text">evidence-drift, dependency-drift</td>
-              <td class="compact-text">evidence-drift selected by drift_priority over dependency-drift</td>
-              <td>observability-risk</td>
-              <td>team-lead</td>
-              <td>team-lead</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>attach trace, logs, or evidence before review</td>
@@ -225,11 +185,6 @@
               <td>unknown</td>
               <td>healthy</td>
               <td>aligned</td>
-              <td class="compact-text">aligned</td>
-              <td class="compact-text">single drift label</td>
-              <td>aligned</td>
-              <td>none</td>
-              <td>none</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>continue with normal monitoring</td>
@@ -240,11 +195,6 @@
               <td>unknown</td>
               <td>degraded</td>
               <td>escalation-drift</td>
-              <td class="compact-text">evidence-drift, escalation-drift</td>
-              <td class="compact-text">escalation-drift selected by drift_priority over evidence-drift</td>
-              <td>authority-risk</td>
-              <td>team-lead</td>
-              <td>incident-commander</td>
               <td>over-escalated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="fail">governance_safe</span></td>
               <td>correct escalation level before continuing</td>
@@ -255,14 +205,116 @@
               <td>unknown</td>
               <td>healthy</td>
               <td>aligned</td>
-              <td class="compact-text">aligned</td>
-              <td class="compact-text">single drift label</td>
-              <td>aligned</td>
-              <td>none</td>
-              <td>none</td>
               <td>calibrated</td>
               <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
               <td>continue with normal monitoring</td>
+            </tr>
+            </tbody>
+      </table>
+    </section>
+
+    <section class="case-section">
+      <h2>Replay Detail Fields</h2>
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>All Drift Labels</th>
+            <th>Conflict Handling</th>
+            <th>Operational Drift</th>
+            <th>Expected</th>
+            <th>Actual</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>S02-001</td>
+              <td>aligned</td>
+              <td>single drift label</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+            </tr>
+            
+            <tr>
+              <td>S02-002</td>
+              <td>evidence-drift</td>
+              <td>single drift label</td>
+              <td>observability-risk</td>
+              <td>incident-commander</td>
+              <td>incident-commander</td>
+            </tr>
+            
+            <tr>
+              <td>S02-003</td>
+              <td>evidence-drift</td>
+              <td>single drift label</td>
+              <td>observability-risk</td>
+              <td>team-lead</td>
+              <td>team-lead</td>
+            </tr>
+            
+            <tr>
+              <td>S02-004</td>
+              <td>aligned</td>
+              <td>single drift label</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+            </tr>
+            
+            <tr>
+              <td>S02-005</td>
+              <td>evidence-drift, dependency-drift</td>
+              <td>evidence-drift selected by drift_priority over dependency-drift</td>
+              <td>observability-risk</td>
+              <td>team-lead</td>
+              <td>team-lead</td>
+            </tr>
+            
+            <tr>
+              <td>S02-006</td>
+              <td>aligned</td>
+              <td>single drift label</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+            </tr>
+            
+            <tr>
+              <td>S02-007</td>
+              <td>evidence-drift, dependency-drift</td>
+              <td>evidence-drift selected by drift_priority over dependency-drift</td>
+              <td>observability-risk</td>
+              <td>team-lead</td>
+              <td>team-lead</td>
+            </tr>
+            
+            <tr>
+              <td>S02-008</td>
+              <td>aligned</td>
+              <td>single drift label</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+            </tr>
+            
+            <tr>
+              <td>S02-009</td>
+              <td>evidence-drift, escalation-drift</td>
+              <td>escalation-drift selected by drift_priority over evidence-drift</td>
+              <td>authority-risk</td>
+              <td>team-lead</td>
+              <td>incident-commander</td>
+            </tr>
+            
+            <tr>
+              <td>S02-010</td>
+              <td>aligned</td>
+              <td>single drift label</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
             </tr>
             </tbody>
       </table>

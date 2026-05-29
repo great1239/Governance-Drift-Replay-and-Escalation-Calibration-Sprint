@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T21:21:36.060570+00:00",
+  "generated_at": "2026-05-29T21:28:21.180907+00:00",
   "input_file": "samples\\05_under_escalated\\input_updates.json",
   "rules_file": "escalation_rules.json",
   "mode": "full",
