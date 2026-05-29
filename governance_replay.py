@@ -809,6 +809,15 @@ def format_delta(value):
     return f"{sign}{value:.2f}"
 
 
+def format_rule_condition(rule):
+    parts = []
+    if rule.get("drift_any"):
+        parts.append("drift: " + ", ".join(rule["drift_any"]))
+    if rule.get("severity_any"):
+        parts.append("severity: " + ", ".join(rule["severity_any"]))
+    return "; ".join(parts) if parts else "default"
+
+
 def observed_drift_summary(summary):
     display_names = {
         "authority-drift": "authority drift",
@@ -842,7 +851,7 @@ def observed_drift_summary(summary):
     return ", ".join(parts) if parts else "none"
 
 
-def write_dashboard(path, cases, summary, pressure):
+def write_dashboard(path, cases, summary, pressure, rules, rules_source):
     path.parent.mkdir(parents=True, exist_ok=True)
     css_source = Path(__file__).with_name("dashboard.css")
     css_target = path.parent / "dashboard.css"
@@ -880,6 +889,29 @@ def write_dashboard(path, cases, summary, pressure):
     )
     if not pressure_rows:
         pressure_rows = "<tr><td colspan=\"2\">No previous run to compare.</td></tr>"
+
+    drift_priority_items = "\n".join(
+        f"<li>{index}. {html.escape(name)}</li>"
+        for index, name in enumerate(rules["drift_priority"], start=1)
+    )
+    escalation_rank_items = "\n".join(
+        f"<li>{index}. {html.escape(name)}</li>"
+        for index, name in enumerate(rules["escalation_rank"], start=1)
+    )
+    rule_rows = "\n".join(
+        f"""
+        <tr>
+          <td>{html.escape(rule.get("name", "unnamed"))}</td>
+          <td>{html.escape(format_rule_condition(rule))}</td>
+          <td>{html.escape(rule.get("expected", "none"))}</td>
+        </tr>
+        """
+        for rule in rules["expected_escalation_rules"]
+    )
+    keyword_rows = "\n".join(
+        f"<tr><td>{html.escape(name)}</td><td>{html.escape(', '.join(values))}</td></tr>"
+        for name, values in sorted(rules["keywords"].items())
+    )
 
     case_rows = []
     for case in cases:
@@ -973,6 +1005,32 @@ def write_dashboard(path, cases, summary, pressure):
           <tbody>{pressure_rows}</tbody>
         </table>
       </section>
+    </section>
+
+    <section class="case-section">
+      <h2>Active Rule Config</h2>
+      <p class="muted-line"><strong>Source:</strong> {html.escape(rules_source)}</p>
+      <div class="rule-grid">
+        <section>
+          <h3>Drift Priority</h3>
+          <ol class="rule-list">{drift_priority_items}</ol>
+        </section>
+        <section>
+          <h3>Escalation Rank</h3>
+          <ol class="rule-list">{escalation_rank_items}</ol>
+        </section>
+      </div>
+      <table>
+        <thead><tr><th>Rule</th><th>Condition</th><th>Expected escalation</th></tr></thead>
+        <tbody>{rule_rows}</tbody>
+      </table>
+      <details class="keyword-details">
+        <summary>Keyword groups used by parser</summary>
+        <table>
+          <thead><tr><th>Group</th><th>Keywords</th></tr></thead>
+          <tbody>{keyword_rows}</tbody>
+        </table>
+      </details>
     </section>
 
     <section class="case-section">
@@ -1081,22 +1139,38 @@ def main():
         "analyzed_records": len(updates_for_run),
         "summary": summary,
         "pressure_comparison": pressure,
+        "active_rules": rules,
         "cases": first_pass,
     }
 
     write_json(output_dir / "structured_updates.json", first_pass)
     write_json(output_dir / "replay_results.json", run_result)
     write_json(output_dir / "pressure_comparison.json", pressure)
+    write_json(
+        output_dir / "rules_used.json",
+        {
+            "rules_file": str(rules_path if rules_path.exists() else "built-in defaults"),
+            "rules": rules,
+        },
+    )
     if state_enabled:
         write_json(state_path, state_snapshot)
     write_csv(output_dir / "escalation_report.csv", first_pass)
     dashboard_path = output_dir / args.dashboard
-    write_dashboard(dashboard_path, first_pass, summary, pressure)
+    write_dashboard(
+        dashboard_path,
+        first_pass,
+        summary,
+        pressure,
+        rules,
+        str(rules_path if rules_path.exists() else "built-in defaults"),
+    )
 
     print("Governance replay complete")
     print(f"- structured output: {output_dir / 'structured_updates.json'}")
     print(f"- replay output:     {output_dir / 'replay_results.json'}")
     print(f"- pressure output:   {output_dir / 'pressure_comparison.json'}")
+    print(f"- rules used:        {output_dir / 'rules_used.json'}")
     print(f"- csv report:        {output_dir / 'escalation_report.csv'}")
     print(f"- dashboard:         {dashboard_path}")
     print(f"- deterministic replay pass: {deterministic_replay_pass}")

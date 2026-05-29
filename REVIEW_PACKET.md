@@ -30,6 +30,8 @@ samples evidence suite
 
 - Default messy input: `samples/00_default_example/input_updates.json`
 - Rule file: `escalation_rules.json`
+- Rule explanation: `RULES.md`
+- Active rule snapshots: `samples/*/rules_used.json`
 - Curated evidence suite: `samples/`
 - Sample parsed outputs: `samples/*/structured_updates.json`
 - Sample replay proofs: `samples/*/replay_results.json`
@@ -121,6 +123,7 @@ The next run compares against that saved state. If case count increases, pressur
 
 - Governance drift labels such as `authority-drift`, `replay-drift`, `evidence-drift`, and `escalation-drift`.
 - Expected escalation is calculated from visible rules.
+- The loaded rule config is written to `rules_used.json` for every run.
 - Actual escalation is extracted from the update.
 - Calibration is marked as `calibrated`, `under-escalated`, or `over-escalated`.
 - The same selected input batch is replayed twice to prove deterministic output.

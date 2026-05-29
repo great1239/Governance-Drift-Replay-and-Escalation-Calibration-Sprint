@@ -57,6 +57,7 @@ Generated runtime outputs:
 | `outputs/structured_updates.json` | parsed structured result for each update |
 | `outputs/replay_results.json` | full replay, drift, calibration, and summary result |
 | `outputs/pressure_comparison.json` | current run compared with previous run |
+| `outputs/rules_used.json` | exact rule config loaded for that run |
 | `outputs/last_run_state.json` | state used by the next scheduled run |
 | `outputs/escalation_report.csv` | spreadsheet-friendly report |
 | `outputs/dashboard.html` | generated dashboard |
@@ -202,6 +203,17 @@ Conflict handling:
 
 When one update matches several drift labels, the program keeps every matching label in `drift_types`, stores the non-primary labels in `secondary_drifts`, and explains the selected primary label in `conflict_resolution`.
 
+## Rule Visibility
+
+The rule config is intentionally visible instead of hidden in the code.
+
+Rule files:
+
+- [RULES.md](RULES.md)
+- [escalation_rules.json](escalation_rules.json)
+
+Each run also writes `rules_used.json` beside the other outputs, and the dashboard includes an `Active Rule Config` section showing priority order, escalation rank, escalation rules, and keyword groups.
+
 ## Pressure Comparison
 
 For scheduled monitoring, omit `--full`.
@@ -244,6 +256,7 @@ python governance_replay.py --input outputs/generated_updates.json --full --no-o
 |---|---|
 | `governance_replay.py` | main parser, replay engine, calibration logic, pressure comparison, and output writer |
 | `governance_stream_generator.py` | optional fake input generator for testing pressure |
+| `RULES.md` | readable explanation of the rule config |
 | `escalation_rules.json` | visible deterministic rules |
 | `dashboard.css` | dashboard stylesheet |
 | `samples/` | curated evidence suite |

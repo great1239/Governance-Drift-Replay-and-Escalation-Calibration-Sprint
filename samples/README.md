@@ -122,6 +122,7 @@ input_updates.json
 structured_updates.json
 replay_results.json
 pressure_comparison.json
+rules_used.json
 escalation_report.csv
 dashboard.html
 dashboard.css
