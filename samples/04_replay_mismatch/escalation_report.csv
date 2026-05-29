@@ -1,0 +1,11 @@
+case_id,service,system_status,severity,primary_drift,operational_drift_classification,drift_types,expected_escalation,actual_escalation,calibration,structured,observable,deterministic,governance_safe,safe_to_continue,recommended_action
+S04-001,checkout,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S04-002,search,unknown,high,replay-drift,replay-risk,replay-drift,team-lead,team-lead,calibrated,False,True,False,True,False,rerun replay before treating the decision as stable
+S04-003,billing,failed,critical,replay-drift,replay-risk,replay-drift; escalation-drift,incident-commander,team-lead,under-escalated,True,True,False,False,False,rerun replay before treating the decision as stable
+S04-004,inventory,healthy,medium,escalation-drift,authority-risk,dependency-drift; escalation-drift,service-owner,none,under-escalated,True,True,True,False,False,correct escalation level before continuing
+S04-005,orders,unknown,critical,replay-drift,replay-risk,replay-drift,incident-commander,incident-commander,calibrated,False,True,False,True,False,rerun replay before treating the decision as stable
+S04-006,auth,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S04-007,payments,unknown,critical,replay-drift,replay-risk,replay-drift; escalation-drift,incident-commander,team-lead,under-escalated,False,True,False,False,False,rerun replay before treating the decision as stable
+S04-008,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S04-009,unknown,failed,critical,replay-drift,replay-risk,replay-drift; escalation-drift,incident-commander,team-lead,under-escalated,True,True,False,False,False,rerun replay before treating the decision as stable
+S04-010,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring

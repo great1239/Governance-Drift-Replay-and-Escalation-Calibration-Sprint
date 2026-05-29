@@ -1,0 +1,11 @@
+case_id,service,system_status,severity,primary_drift,operational_drift_classification,drift_types,expected_escalation,actual_escalation,calibration,structured,observable,deterministic,governance_safe,safe_to_continue,recommended_action
+S03-001,checkout,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S03-002,payments,unknown,high,authority-drift,authority-risk,authority-drift; escalation-drift,governance-review,none,under-escalated,False,False,True,False,False,hold execution until approval and authorization are visible
+S03-003,billing,unknown,high,authority-drift,authority-risk,authority-drift; escalation-drift,governance-review,service-owner,under-escalated,False,True,True,False,False,hold execution until approval and authorization are visible
+S03-004,search,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S03-005,inventory,unknown,high,authority-drift,authority-risk,authority-drift; escalation-drift,governance-review,team-lead,under-escalated,False,True,True,False,False,hold execution until approval and authorization are visible
+S03-006,auth,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S03-007,orders,unknown,critical,authority-drift,authority-risk,authority-drift,governance-review,governance-review,calibrated,False,True,True,False,False,hold execution until approval and authorization are visible
+S03-008,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S03-009,unknown,unknown,high,authority-drift,authority-risk,authority-drift; escalation-drift,governance-review,team-lead,under-escalated,False,True,True,False,False,hold execution until approval and authorization are visible
+S03-010,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring

@@ -1,0 +1,52 @@
+[
+  {
+    "case_id": "S08-001",
+    "timestamp": "2026-05-29T09:00:00Z",
+    "update": "Checkout is healthy. Trace attached. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S08-002",
+    "timestamp": "2026-05-29T09:03:00Z",
+    "update": "Looking into it."
+  },
+  {
+    "case_id": "S08-003",
+    "timestamp": "2026-05-29T09:06:00Z",
+    "update": "Checking now."
+  },
+  {
+    "case_id": "S08-004",
+    "timestamp": "2026-05-29T09:09:00Z",
+    "update": "Search service stable. Logs attached. Approval granted. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S08-005",
+    "timestamp": "2026-05-29T09:12:00Z",
+    "update": "Maybe broken."
+  },
+  {
+    "case_id": "S08-006",
+    "timestamp": "2026-05-29T09:15:00Z",
+    "update": "Auth workflow normal. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S08-007",
+    "timestamp": "2026-05-29T09:18:00Z",
+    "update": "Need help."
+  },
+  {
+    "case_id": "S08-008",
+    "timestamp": "2026-05-29T09:21:00Z",
+    "update": "Notifications healthy. Dashboard linked. Approval was not required. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S08-009",
+    "timestamp": "2026-05-29T09:24:00Z",
+    "update": "Something changed."
+  },
+  {
+    "case_id": "S08-010",
+    "timestamp": "2026-05-29T09:27:00Z",
+    "update": "Support sync stable. Trace attached. Approval granted. Replay matched. No escalation required."
+  }
+]

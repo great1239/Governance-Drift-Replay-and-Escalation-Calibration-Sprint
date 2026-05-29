@@ -1,0 +1,8 @@
+{
+  "enabled": false,
+  "state_file": "samples\\04_replay_mismatch\\last_run_state.json",
+  "pressure_direction": "not-tracked",
+  "stable_under_pressure": null,
+  "metric_deltas": {},
+  "note": "state tracking disabled for this run"
+}

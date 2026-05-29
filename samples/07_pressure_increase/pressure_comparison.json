@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "state_file": "samples\\07_pressure_increase\\last_run_state.json",
+  "previous_total_cases": 4,
+  "current_total_cases": 6,
+  "pressure_direction": "increased",
+  "stable_under_pressure": false,
+  "metric_deltas": {
+    "structured": -50.0,
+    "observable": -50.0,
+    "deterministic": -16.67,
+    "governance_safe": -8.33
+  },
+  "note": "pressure increased; metric deltas show whether intelligence stayed stable"
+}

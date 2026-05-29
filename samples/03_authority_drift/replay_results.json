@@ -1,0 +1,443 @@
+{
+  "generated_at": "2026-05-29T18:23:59.105320+00:00",
+  "input_file": "samples\\03_authority_drift\\input_updates.json",
+  "rules_file": "escalation_rules.json",
+  "mode": "full",
+  "total_input_records": 10,
+  "analyzed_records": 10,
+  "summary": {
+    "total_cases": 10,
+    "deterministic_replay_pass": true,
+    "drift_counts": {
+      "aligned": 5,
+      "authority-drift": 5
+    },
+    "operational_drift_counts": {
+      "aligned": 5,
+      "authority-risk": 5
+    },
+    "calibration_counts": {
+      "calibrated": 6,
+      "under-escalated": 4
+    },
+    "metric_rates": {
+      "structured": 50.0,
+      "observable": 90.0,
+      "deterministic": 100.0,
+      "governance_safe": 50.0
+    },
+    "unsafe_cases": [
+      "S03-002",
+      "S03-003",
+      "S03-005",
+      "S03-007",
+      "S03-009"
+    ]
+  },
+  "pressure_comparison": {
+    "enabled": false,
+    "state_file": "samples\\03_authority_drift\\last_run_state.json",
+    "pressure_direction": "not-tracked",
+    "stable_under_pressure": null,
+    "metric_deltas": {},
+    "note": "state tracking disabled for this run"
+  },
+  "cases": [
+    {
+      "case_id": "S03-001",
+      "timestamp": "2026-05-29T09:00:00Z",
+      "raw_update": "Checkout is healthy. Trace attached. Evidence attached. Approval granted. Replay matched. No escalation required.",
+      "service": "checkout",
+      "system_status": "healthy",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [],
+      "severity": "low",
+      "evidence_state": "present",
+      "approval_state": "approved",
+      "actor_authorized": "unknown",
+      "replay_state": "matched",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "aligned"
+      ],
+      "primary_drift": "aligned",
+      "operational_drift_classification": "aligned",
+      "expected_escalation": "none",
+      "actual_escalation": "none",
+      "escalation_rule": "default",
+      "calibration": "calibrated",
+      "calibration_reason": "actual escalation matched expected escalation",
+      "checks": {
+        "structured": true,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": true
+      },
+      "safe_to_continue": true,
+      "recommended_action": "continue with normal monitoring",
+      "replay_hash": "004f95a239eebbbb"
+    },
+    {
+      "case_id": "S03-002",
+      "timestamp": "2026-05-29T09:03:00Z",
+      "raw_update": "Payments manual override completed without approval by unauthorized contractor. No escalation.",
+      "service": "payments",
+      "system_status": "unknown",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [
+        "without approval",
+        "unauthorized",
+        "manual override"
+      ],
+      "severity": "high",
+      "evidence_state": "unknown",
+      "approval_state": "unsafe",
+      "actor_authorized": "no",
+      "replay_state": "unknown",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "authority-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "authority-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "governance-review",
+      "actual_escalation": "none",
+      "escalation_rule": "authority_governance_review",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": false,
+        "observable": false,
+        "deterministic": true,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "hold execution until approval and authorization are visible",
+      "replay_hash": "f8c24a771bc23aad"
+    },
+    {
+      "case_id": "S03-003",
+      "timestamp": "2026-05-29T09:06:00Z",
+      "raw_update": "Billing access change applied with approval pending. Evidence attached. Escalated to service owner.",
+      "service": "billing",
+      "system_status": "unknown",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [
+        "approval pending"
+      ],
+      "severity": "high",
+      "evidence_state": "present",
+      "approval_state": "unsafe",
+      "actor_authorized": "unknown",
+      "replay_state": "unknown",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "authority-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "authority-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "governance-review",
+      "actual_escalation": "service-owner",
+      "escalation_rule": "authority_governance_review",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": false,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "hold execution until approval and authorization are visible",
+      "replay_hash": "30ee29c9f52108e6"
+    },
+    {
+      "case_id": "S03-004",
+      "timestamp": "2026-05-29T09:09:00Z",
+      "raw_update": "Search service stable. Trace attached. Approval granted. Replay passed. No escalation required.",
+      "service": "search",
+      "system_status": "healthy",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [],
+      "severity": "low",
+      "evidence_state": "present",
+      "approval_state": "approved",
+      "actor_authorized": "unknown",
+      "replay_state": "matched",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "aligned"
+      ],
+      "primary_drift": "aligned",
+      "operational_drift_classification": "aligned",
+      "expected_escalation": "none",
+      "actual_escalation": "none",
+      "escalation_rule": "default",
+      "calibration": "calibrated",
+      "calibration_reason": "actual escalation matched expected escalation",
+      "checks": {
+        "structured": true,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": true
+      },
+      "safe_to_continue": true,
+      "recommended_action": "continue with normal monitoring",
+      "replay_hash": "a2661ac0c56f4661"
+    },
+    {
+      "case_id": "S03-005",
+      "timestamp": "2026-05-29T09:12:00Z",
+      "raw_update": "Inventory policy exception applied without approval. Logs attached. Escalated to team lead.",
+      "service": "inventory",
+      "system_status": "unknown",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [
+        "without approval"
+      ],
+      "severity": "high",
+      "evidence_state": "present",
+      "approval_state": "unsafe",
+      "actor_authorized": "unknown",
+      "replay_state": "unknown",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "authority-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "authority-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "governance-review",
+      "actual_escalation": "team-lead",
+      "escalation_rule": "authority_governance_review",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": false,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "hold execution until approval and authorization are visible",
+      "replay_hash": "f0e07066821a3002"
+    },
+    {
+      "case_id": "S03-006",
+      "timestamp": "2026-05-29T09:15:00Z",
+      "raw_update": "Auth service healthy. Evidence attached. Approval granted. Replay matched. No escalation required.",
+      "service": "auth",
+      "system_status": "healthy",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [],
+      "severity": "low",
+      "evidence_state": "present",
+      "approval_state": "approved",
+      "actor_authorized": "unknown",
+      "replay_state": "matched",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "aligned"
+      ],
+      "primary_drift": "aligned",
+      "operational_drift_classification": "aligned",
+      "expected_escalation": "none",
+      "actual_escalation": "none",
+      "escalation_rule": "default",
+      "calibration": "calibrated",
+      "calibration_reason": "actual escalation matched expected escalation",
+      "checks": {
+        "structured": true,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": true
+      },
+      "safe_to_continue": true,
+      "recommended_action": "continue with normal monitoring",
+      "replay_hash": "b7bfafbfcafbd8f2"
+    },
+    {
+      "case_id": "S03-007",
+      "timestamp": "2026-05-29T09:18:00Z",
+      "raw_update": "Orders production fix bypassed approval. Trace attached. Escalated to governance review.",
+      "service": "orders",
+      "system_status": "unknown",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [
+        "bypassed approval"
+      ],
+      "severity": "critical",
+      "evidence_state": "present",
+      "approval_state": "unsafe",
+      "actor_authorized": "unknown",
+      "replay_state": "unknown",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "authority-drift"
+      ],
+      "primary_drift": "authority-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "governance-review",
+      "actual_escalation": "governance-review",
+      "escalation_rule": "authority_governance_review",
+      "calibration": "calibrated",
+      "calibration_reason": "actual escalation matched expected escalation",
+      "checks": {
+        "structured": false,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "hold execution until approval and authorization are visible",
+      "replay_hash": "81a45c93e4b40a00"
+    },
+    {
+      "case_id": "S03-008",
+      "timestamp": "2026-05-29T09:21:00Z",
+      "raw_update": "Notifications normal. Logs attached. Approval was not required. Replay passed. No escalation required.",
+      "service": "unknown",
+      "system_status": "healthy",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [],
+      "severity": "low",
+      "evidence_state": "present",
+      "approval_state": "not-required",
+      "actor_authorized": "unknown",
+      "replay_state": "matched",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "aligned"
+      ],
+      "primary_drift": "aligned",
+      "operational_drift_classification": "aligned",
+      "expected_escalation": "none",
+      "actual_escalation": "none",
+      "escalation_rule": "default",
+      "calibration": "calibrated",
+      "calibration_reason": "actual escalation matched expected escalation",
+      "checks": {
+        "structured": true,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": true
+      },
+      "safe_to_continue": true,
+      "recommended_action": "continue with normal monitoring",
+      "replay_hash": "e1c34170880afbbb"
+    },
+    {
+      "case_id": "S03-009",
+      "timestamp": "2026-05-29T09:24:00Z",
+      "raw_update": "Catalog access granted manually. Approval missing. Evidence attached. Escalated to team lead.",
+      "service": "unknown",
+      "system_status": "unknown",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [
+        "approval missing"
+      ],
+      "severity": "high",
+      "evidence_state": "present",
+      "approval_state": "unsafe",
+      "actor_authorized": "unknown",
+      "replay_state": "unknown",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "authority-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "authority-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "governance-review",
+      "actual_escalation": "team-lead",
+      "escalation_rule": "authority_governance_review",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": false,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "hold execution until approval and authorization are visible",
+      "replay_hash": "0fb39830b8a65058"
+    },
+    {
+      "case_id": "S03-010",
+      "timestamp": "2026-05-29T09:27:00Z",
+      "raw_update": "Support sync stable. Trace attached. Approval granted. Replay matched. No escalation required.",
+      "service": "unknown",
+      "system_status": "healthy",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [],
+      "severity": "low",
+      "evidence_state": "present",
+      "approval_state": "approved",
+      "actor_authorized": "unknown",
+      "replay_state": "matched",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "aligned"
+      ],
+      "primary_drift": "aligned",
+      "operational_drift_classification": "aligned",
+      "expected_escalation": "none",
+      "actual_escalation": "none",
+      "escalation_rule": "default",
+      "calibration": "calibrated",
+      "calibration_reason": "actual escalation matched expected escalation",
+      "checks": {
+        "structured": true,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": true
+      },
+      "safe_to_continue": true,
+      "recommended_action": "continue with normal monitoring",
+      "replay_hash": "8f375e815c4f2207"
+    }
+  ]
+}

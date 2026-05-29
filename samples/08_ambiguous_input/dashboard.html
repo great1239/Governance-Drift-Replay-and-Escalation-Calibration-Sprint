@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Governance Drift Replay Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Governance SHAKTI - 7-4-3 Test 3 Final</p>
+        <h1>Governance Drift Replay Dashboard</h1>
+      </div>
+      <div class="status-pill">Replay deterministic: true</div>
+    </header>
+
+    <section class="summary-grid">
+      <section class="summary-card">
+        <h2>Run Summary</h2>
+        <p><strong>Total cases:</strong> 10</p>
+        <p><strong>Unsafe cases:</strong> S08-002, S08-003, S08-005, S08-007, S08-009</p>
+        <p><strong>Observed drift:</strong> ambiguous input (5), aligned (5)</p>
+      </section>
+      <section class="summary-card">
+        <h2>Pressure Comparison</h2>
+        <p><strong>Direction:</strong> not-tracked</p>
+        <p><strong>Previous cases:</strong> n/a</p>
+        <p><strong>Current cases:</strong> 10</p>
+        <p><strong>Stable under pressure:</strong> None</p>
+      </section>
+    </section>
+
+    <section class="metrics">
+      
+        <section class="metric-card">
+          <span>Structured</span>
+          <strong>50.00%</strong>
+        </section>
+        
+
+        <section class="metric-card">
+          <span>Observable</span>
+          <strong>50.00%</strong>
+        </section>
+        
+
+        <section class="metric-card">
+          <span>Deterministic</span>
+          <strong>100.00%</strong>
+        </section>
+        
+
+        <section class="metric-card">
+          <span>Governance Safe</span>
+          <strong>100.00%</strong>
+        </section>
+        
+    </section>
+
+    <section class="tables">
+      <section>
+        <h2>Governance Drift Counts</h2>
+        <table>
+          <thead><tr><th>Primary drift</th><th>Count</th></tr></thead>
+          <tbody><tr><td>aligned</td><td>5</td></tr>
+<tr><td>ambiguous</td><td>5</td></tr></tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Operational Drift Taxonomy</h2>
+        <table>
+          <thead><tr><th>Classification</th><th>Count</th></tr></thead>
+          <tbody><tr><td>aligned</td><td>5</td></tr>
+<tr><td>unclear/incomplete</td><td>5</td></tr></tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Escalation Calibration</h2>
+        <table>
+          <thead><tr><th>Calibration</th><th>Count</th></tr></thead>
+          <tbody><tr><td>calibrated</td><td>10</td></tr></tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Metric Delta From Previous Run</h2>
+        <table>
+          <thead><tr><th>Metric</th><th>Delta</th></tr></thead>
+          <tbody><tr><td colspan="2">No previous run to compare.</td></tr></tbody>
+        </table>
+      </section>
+    </section>
+
+    <section class="case-section">
+      <h2>Case Replay Results</h2>
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Service</th>
+            <th>Status</th>
+            <th>Governance Drift</th>
+            <th>Operational Drift</th>
+            <th>Expected</th>
+            <th>Actual</th>
+            <th>Calibration</th>
+            <th>Checks</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>S08-001</td>
+              <td>checkout</td>
+              <td>healthy</td>
+              <td>aligned</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>continue with normal monitoring</td>
+            </tr>
+            
+            <tr>
+              <td>S08-002</td>
+              <td>unknown</td>
+              <td>unknown</td>
+              <td>ambiguous</td>
+              <td>unclear/incomplete</td>
+              <td>none</td>
+              <td>not-visible</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="fail">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>request a clearer operational update</td>
+            </tr>
+            
+            <tr>
+              <td>S08-003</td>
+              <td>unknown</td>
+              <td>unknown</td>
+              <td>ambiguous</td>
+              <td>unclear/incomplete</td>
+              <td>none</td>
+              <td>not-visible</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="fail">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>request a clearer operational update</td>
+            </tr>
+            
+            <tr>
+              <td>S08-004</td>
+              <td>search</td>
+              <td>healthy</td>
+              <td>aligned</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>continue with normal monitoring</td>
+            </tr>
+            
+            <tr>
+              <td>S08-005</td>
+              <td>unknown</td>
+              <td>unknown</td>
+              <td>ambiguous</td>
+              <td>unclear/incomplete</td>
+              <td>none</td>
+              <td>not-visible</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="fail">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>request a clearer operational update</td>
+            </tr>
+            
+            <tr>
+              <td>S08-006</td>
+              <td>auth</td>
+              <td>healthy</td>
+              <td>aligned</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>continue with normal monitoring</td>
+            </tr>
+            
+            <tr>
+              <td>S08-007</td>
+              <td>unknown</td>
+              <td>unknown</td>
+              <td>ambiguous</td>
+              <td>unclear/incomplete</td>
+              <td>none</td>
+              <td>not-visible</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="fail">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>request a clearer operational update</td>
+            </tr>
+            
+            <tr>
+              <td>S08-008</td>
+              <td>unknown</td>
+              <td>healthy</td>
+              <td>aligned</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>continue with normal monitoring</td>
+            </tr>
+            
+            <tr>
+              <td>S08-009</td>
+              <td>unknown</td>
+              <td>unknown</td>
+              <td>ambiguous</td>
+              <td>unclear/incomplete</td>
+              <td>none</td>
+              <td>not-visible</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="fail">structured</span> <span class="check" data-state="fail">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>request a clearer operational update</td>
+            </tr>
+            
+            <tr>
+              <td>S08-010</td>
+              <td>unknown</td>
+              <td>healthy</td>
+              <td>aligned</td>
+              <td>aligned</td>
+              <td>none</td>
+              <td>none</td>
+              <td>calibrated</td>
+              <td><span class="check" data-state="pass">structured</span> <span class="check" data-state="pass">observable</span> <span class="check" data-state="pass">deterministic</span> <span class="check" data-state="pass">governance_safe</span></td>
+              <td>continue with normal monitoring</td>
+            </tr>
+            </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

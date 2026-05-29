@@ -1,0 +1,52 @@
+[
+  {
+    "case_id": "S06-001",
+    "timestamp": "2026-05-29T09:00:00Z",
+    "update": "Checkout is healthy. Trace attached. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S06-002",
+    "timestamp": "2026-05-29T09:03:00Z",
+    "update": "Auth service stable. Evidence attached. Approval granted. Replay passed. Escalated to governance review."
+  },
+  {
+    "case_id": "S06-003",
+    "timestamp": "2026-05-29T09:06:00Z",
+    "update": "Billing normal. Trace attached. Approval granted. Replay matched. Escalated to incident commander."
+  },
+  {
+    "case_id": "S06-004",
+    "timestamp": "2026-05-29T09:09:00Z",
+    "update": "Search workflow stable. Logs attached. Approval granted. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S06-005",
+    "timestamp": "2026-05-29T09:12:00Z",
+    "update": "Inventory queue healthy. Evidence attached. Approval was not required. Escalated to team lead."
+  },
+  {
+    "case_id": "S06-006",
+    "timestamp": "2026-05-29T09:15:00Z",
+    "update": "Orders pipeline normal. Trace attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S06-007",
+    "timestamp": "2026-05-29T09:18:00Z",
+    "update": "Payments service stable. Logs attached. Approval granted. Replay passed. Escalated to governance review."
+  },
+  {
+    "case_id": "S06-008",
+    "timestamp": "2026-05-29T09:21:00Z",
+    "update": "Notifications healthy. Dashboard linked. Approval was not required. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S06-009",
+    "timestamp": "2026-05-29T09:24:00Z",
+    "update": "Catalog workflow normal. Evidence attached. Approval granted. Replay passed. Escalated to team lead."
+  },
+  {
+    "case_id": "S06-010",
+    "timestamp": "2026-05-29T09:27:00Z",
+    "update": "Support sync stable. Trace attached. Approval granted. Replay matched. No escalation required."
+  }
+]

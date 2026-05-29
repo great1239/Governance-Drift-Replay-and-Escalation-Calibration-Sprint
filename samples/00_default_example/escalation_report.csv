@@ -1,0 +1,8 @@
+case_id,service,system_status,severity,primary_drift,operational_drift_classification,drift_types,expected_escalation,actual_escalation,calibration,structured,observable,deterministic,governance_safe,safe_to_continue,recommended_action
+GOV-001,checkout,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+GOV-002,billing,degraded,critical,evidence-drift,observability-risk,evidence-drift,incident-commander,incident-commander,calibrated,True,False,True,True,False,"attach trace, logs, or evidence before review"
+GOV-003,payments,unknown,high,authority-drift,authority-risk,authority-drift; escalation-drift,governance-review,none,under-escalated,False,False,True,False,False,hold execution until approval and authorization are visible
+GOV-004,search,unknown,high,replay-drift,replay-risk,replay-drift,team-lead,team-lead,calibrated,False,True,False,True,False,rerun replay before treating the decision as stable
+GOV-005,orders,failed,critical,escalation-drift,authority-risk,aligned; escalation-drift,incident-commander,service-owner,under-escalated,True,True,True,False,False,correct escalation level before continuing
+GOV-006,auth,healthy,low,escalation-drift,authority-risk,aligned; escalation-drift,none,governance-review,over-escalated,True,True,True,False,False,correct escalation level before continuing
+GOV-007,unknown,unknown,medium,ambiguous,unclear/incomplete,ambiguous,none,not-visible,calibrated,False,False,True,True,False,request a clearer operational update

@@ -1,0 +1,52 @@
+[
+  {
+    "case_id": "S04-001",
+    "timestamp": "2026-05-29T09:00:00Z",
+    "update": "Checkout is healthy. Trace attached. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S04-002",
+    "timestamp": "2026-05-29T09:03:00Z",
+    "update": "Search replay mismatch after rerun. Different result from the same input. Evidence attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S04-003",
+    "timestamp": "2026-05-29T09:06:00Z",
+    "update": "Billing rollback cannot replay cleanly. Rerun failed during validation. Logs attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S04-004",
+    "timestamp": "2026-05-29T09:09:00Z",
+    "update": "Inventory queue stable. Evidence attached. Approval granted. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S04-005",
+    "timestamp": "2026-05-29T09:12:00Z",
+    "update": "Orders mitigation produced a different result on replay. Trace attached. Escalated to incident commander."
+  },
+  {
+    "case_id": "S04-006",
+    "timestamp": "2026-05-29T09:15:00Z",
+    "update": "Auth service normal. Logs attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S04-007",
+    "timestamp": "2026-05-29T09:18:00Z",
+    "update": "Payments validation is not reproducible. Evidence attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S04-008",
+    "timestamp": "2026-05-29T09:21:00Z",
+    "update": "Notifications stable. Dashboard linked. Approval was not required. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S04-009",
+    "timestamp": "2026-05-29T09:24:00Z",
+    "update": "Catalog rerun failed after the same input was replayed. Logs attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S04-010",
+    "timestamp": "2026-05-29T09:27:00Z",
+    "update": "Support sync healthy. Trace attached. Approval granted. Replay matched. No escalation required."
+  }
+]

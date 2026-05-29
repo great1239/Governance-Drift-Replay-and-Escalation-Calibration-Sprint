@@ -1,0 +1,52 @@
+[
+  {
+    "case_id": "S02-001",
+    "timestamp": "2026-05-29T09:00:00Z",
+    "update": "Checkout is healthy. Trace attached. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S02-002",
+    "timestamp": "2026-05-29T09:03:00Z",
+    "update": "Billing latency spike in production. No trace and no evidence attached. Escalated to incident commander."
+  },
+  {
+    "case_id": "S02-003",
+    "timestamp": "2026-05-29T09:06:00Z",
+    "update": "Search degraded for checkout queries. Missing trace. Escalated to team lead."
+  },
+  {
+    "case_id": "S02-004",
+    "timestamp": "2026-05-29T09:09:00Z",
+    "update": "Inventory service stable. Logs attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S02-005",
+    "timestamp": "2026-05-29T09:12:00Z",
+    "update": "Orders API slow. No logs and no metrics were attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S02-006",
+    "timestamp": "2026-05-29T09:15:00Z",
+    "update": "Auth workflow normal. Evidence attached. Approval granted. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S02-007",
+    "timestamp": "2026-05-29T09:18:00Z",
+    "update": "Payments queue degraded. Missing evidence for the rollback decision. Escalated to team lead."
+  },
+  {
+    "case_id": "S02-008",
+    "timestamp": "2026-05-29T09:21:00Z",
+    "update": "Notifications healthy. Dashboard linked. Approval was not required. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S02-009",
+    "timestamp": "2026-05-29T09:24:00Z",
+    "update": "Catalog error spike. Trace missing and no evidence attached. Escalated to incident commander."
+  },
+  {
+    "case_id": "S02-010",
+    "timestamp": "2026-05-29T09:27:00Z",
+    "update": "Support reporting stable. Logs attached. Approval granted. Replay passed. No escalation required."
+  }
+]

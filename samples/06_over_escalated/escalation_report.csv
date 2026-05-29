@@ -1,0 +1,11 @@
+case_id,service,system_status,severity,primary_drift,operational_drift_classification,drift_types,expected_escalation,actual_escalation,calibration,structured,observable,deterministic,governance_safe,safe_to_continue,recommended_action
+S06-001,checkout,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S06-002,auth,healthy,low,escalation-drift,authority-risk,aligned; escalation-drift,none,governance-review,over-escalated,True,True,True,False,False,correct escalation level before continuing
+S06-003,billing,healthy,low,escalation-drift,authority-risk,aligned; escalation-drift,none,incident-commander,over-escalated,True,True,True,False,False,correct escalation level before continuing
+S06-004,search,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S06-005,inventory,healthy,medium,escalation-drift,authority-risk,dependency-drift; escalation-drift,service-owner,team-lead,over-escalated,True,True,True,False,False,correct escalation level before continuing
+S06-006,orders,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S06-007,payments,healthy,low,escalation-drift,authority-risk,aligned; escalation-drift,none,governance-review,over-escalated,True,True,True,False,False,correct escalation level before continuing
+S06-008,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S06-009,unknown,healthy,low,escalation-drift,authority-risk,aligned; escalation-drift,none,team-lead,over-escalated,True,True,True,False,False,correct escalation level before continuing
+S06-010,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring

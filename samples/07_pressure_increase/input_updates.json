@@ -1,0 +1,52 @@
+[
+  {
+    "case_id": "S07-001",
+    "timestamp": "2026-05-29T09:00:00Z",
+    "update": "Checkout is healthy. Trace attached. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S07-002",
+    "timestamp": "2026-05-29T09:03:00Z",
+    "update": "Billing service stable. Logs attached. Approval granted. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S07-003",
+    "timestamp": "2026-05-29T09:06:00Z",
+    "update": "Search workflow normal. Evidence attached. Authorized owner confirmed. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S07-004",
+    "timestamp": "2026-05-29T09:09:00Z",
+    "update": "Inventory queue healthy. Metrics attached. Approval was not required. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S07-005",
+    "timestamp": "2026-05-29T10:00:00Z",
+    "update": "Payments manual override completed without approval by unauthorized contractor. No escalation."
+  },
+  {
+    "case_id": "S07-006",
+    "timestamp": "2026-05-29T10:03:00Z",
+    "update": "Search replay mismatch after rerun. Different result from the same input. Evidence attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S07-007",
+    "timestamp": "2026-05-29T10:06:00Z",
+    "update": "Inventory blocked by vendor API. Trace attached. Escalated to service owner."
+  },
+  {
+    "case_id": "S07-008",
+    "timestamp": "2026-05-29T10:09:00Z",
+    "update": "Orders critical outage in production. Trace attached. Approval granted. Replay matched. Escalated to service owner."
+  },
+  {
+    "case_id": "S07-009",
+    "timestamp": "2026-05-29T10:12:00Z",
+    "update": "Billing latency spike in production. No trace and no evidence attached. Escalated to incident commander."
+  },
+  {
+    "case_id": "S07-010",
+    "timestamp": "2026-05-29T10:15:00Z",
+    "update": "Looking into it."
+  }
+]

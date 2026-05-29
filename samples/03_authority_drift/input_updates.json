@@ -1,0 +1,52 @@
+[
+  {
+    "case_id": "S03-001",
+    "timestamp": "2026-05-29T09:00:00Z",
+    "update": "Checkout is healthy. Trace attached. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S03-002",
+    "timestamp": "2026-05-29T09:03:00Z",
+    "update": "Payments manual override completed without approval by unauthorized contractor. No escalation."
+  },
+  {
+    "case_id": "S03-003",
+    "timestamp": "2026-05-29T09:06:00Z",
+    "update": "Billing access change applied with approval pending. Evidence attached. Escalated to service owner."
+  },
+  {
+    "case_id": "S03-004",
+    "timestamp": "2026-05-29T09:09:00Z",
+    "update": "Search service stable. Trace attached. Approval granted. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S03-005",
+    "timestamp": "2026-05-29T09:12:00Z",
+    "update": "Inventory policy exception applied without approval. Logs attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S03-006",
+    "timestamp": "2026-05-29T09:15:00Z",
+    "update": "Auth service healthy. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S03-007",
+    "timestamp": "2026-05-29T09:18:00Z",
+    "update": "Orders production fix bypassed approval. Trace attached. Escalated to governance review."
+  },
+  {
+    "case_id": "S03-008",
+    "timestamp": "2026-05-29T09:21:00Z",
+    "update": "Notifications normal. Logs attached. Approval was not required. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S03-009",
+    "timestamp": "2026-05-29T09:24:00Z",
+    "update": "Catalog access granted manually. Approval missing. Evidence attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S03-010",
+    "timestamp": "2026-05-29T09:27:00Z",
+    "update": "Support sync stable. Trace attached. Approval granted. Replay matched. No escalation required."
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "case_id": "S05-001",
+    "timestamp": "2026-05-29T09:00:00Z",
+    "update": "Checkout is healthy. Trace attached. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S05-002",
+    "timestamp": "2026-05-29T09:03:00Z",
+    "update": "Orders critical outage in production. Trace attached. Approval granted. Replay matched. Escalated to service owner."
+  },
+  {
+    "case_id": "S05-003",
+    "timestamp": "2026-05-29T09:06:00Z",
+    "update": "Billing customer impact from failed invoice job. Evidence attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S05-004",
+    "timestamp": "2026-05-29T09:09:00Z",
+    "update": "Search service stable. Logs attached. Approval granted. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S05-005",
+    "timestamp": "2026-05-29T09:12:00Z",
+    "update": "Inventory critical failure in production. Trace attached. Escalated to service owner."
+  },
+  {
+    "case_id": "S05-006",
+    "timestamp": "2026-05-29T09:15:00Z",
+    "update": "Auth workflow healthy. Evidence attached. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S05-007",
+    "timestamp": "2026-05-29T09:18:00Z",
+    "update": "Payments data loss warning in production. Logs attached. Escalated to team lead."
+  },
+  {
+    "case_id": "S05-008",
+    "timestamp": "2026-05-29T09:21:00Z",
+    "update": "Notifications normal. Dashboard linked. Approval was not required. Replay passed. No escalation required."
+  },
+  {
+    "case_id": "S05-009",
+    "timestamp": "2026-05-29T09:24:00Z",
+    "update": "Catalog outage affecting customers. Evidence attached. Escalated to service owner."
+  },
+  {
+    "case_id": "S05-010",
+    "timestamp": "2026-05-29T09:27:00Z",
+    "update": "Support sync stable. Trace attached. Approval granted. Replay matched. No escalation required."
+  }
+]

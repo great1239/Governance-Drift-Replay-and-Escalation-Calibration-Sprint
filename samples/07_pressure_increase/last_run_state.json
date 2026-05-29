@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-05-29T18:24:05.563978+00:00",
+  "total_cases": 6,
+  "metric_rates": {
+    "structured": 50.0,
+    "observable": 50.0,
+    "deterministic": 83.33,
+    "governance_safe": 66.67
+  },
+  "drift_counts": {
+    "authority-drift": 1,
+    "replay-drift": 1,
+    "dependency-drift": 1,
+    "escalation-drift": 1,
+    "evidence-drift": 1,
+    "ambiguous": 1
+  },
+  "operational_drift_counts": {
+    "authority-risk": 2,
+    "replay-risk": 1,
+    "integration-risk": 1,
+    "observability-risk": 1,
+    "unclear/incomplete": 1
+  },
+  "calibration_counts": {
+    "under-escalated": 2,
+    "calibrated": 4
+  },
+  "last_timestamp": "2026-05-29T10:15:00Z"
+}
