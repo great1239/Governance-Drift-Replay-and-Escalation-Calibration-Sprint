@@ -238,12 +238,6 @@ python governance_replay.py
 | `samples/` | curated evidence suite |
 | `REVIEW_PACKET.md` | concise reviewer-facing explanation |
 
-## Sprint Title Note
-
-`7-4-3` refers to the interview sprint structure: 7-day task, 4-day task, and final 3-day task.
-
-It is not used as a technical rule in the program.
-
 ## Limitation
 
 This is rule-based. It is deterministic and inspectable, but it will miss wording that is not covered by the rules.
