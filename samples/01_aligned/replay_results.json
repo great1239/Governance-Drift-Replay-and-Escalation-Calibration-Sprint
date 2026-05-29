@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T18:25:46.116943+00:00",
+  "generated_at": "2026-05-29T20:59:03.334877+00:00",
   "input_file": "samples\\01_aligned\\input_updates.json",
   "rules_file": "escalation_rules.json",
   "mode": "full",
@@ -56,6 +56,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -70,7 +73,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "317d862650378f7d"
+      "replay_hash": "1583a560f80120d3"
     },
     {
       "case_id": "S01-002",
@@ -94,6 +97,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -108,7 +114,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "3ced5942902fea31"
+      "replay_hash": "ecdc8d42072c8634"
     },
     {
       "case_id": "S01-003",
@@ -132,6 +138,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -146,7 +155,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "de3e815ee7b4537a"
+      "replay_hash": "5f95601493bb4364"
     },
     {
       "case_id": "S01-004",
@@ -170,6 +179,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -184,7 +196,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "da40b64ba892315b"
+      "replay_hash": "481f7a2473a519f9"
     },
     {
       "case_id": "S01-005",
@@ -208,6 +220,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -222,7 +237,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "c99afe5792c8a332"
+      "replay_hash": "4315a0faefee1c66"
     },
     {
       "case_id": "S01-006",
@@ -246,6 +261,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -260,7 +278,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "03341deccd17500b"
+      "replay_hash": "23cc281dab1a3140"
     },
     {
       "case_id": "S01-007",
@@ -284,6 +302,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -298,7 +319,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "0aa40ab789eed131"
+      "replay_hash": "7dc199ef3005d716"
     },
     {
       "case_id": "S01-008",
@@ -322,6 +343,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -336,7 +360,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "aab58421ac8af4cd"
+      "replay_hash": "2467193cb08f8278"
     },
     {
       "case_id": "S01-009",
@@ -360,6 +384,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -374,7 +401,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "7acc2e98fe298110"
+      "replay_hash": "31da17131b4a674d"
     },
     {
       "case_id": "S01-010",
@@ -398,6 +425,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -412,7 +442,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "6c345b95e4168b49"
+      "replay_hash": "0d7a91182ceb45d0"
     }
   ]
 }

@@ -103,6 +103,16 @@ Input: [input](08_ambiguous_input/input_updates.json)
 Dashboard: [dashboard](08_ambiguous_input/dashboard.html)  
 Screenshot: [screenshot](08_ambiguous_input/screenshot.png)
 
+### 09 Conflict Handling
+
+Covers: multiple drift signals in the same update  
+Input size: 10  
+Main proof: deterministic `drift_priority` selection  
+Notes: [notes](09_conflict_handling/notes.md)  
+Input: [input](09_conflict_handling/input_updates.json)  
+Dashboard: [dashboard](09_conflict_handling/dashboard.html)  
+Screenshot: [screenshot](09_conflict_handling/screenshot.png)
+
 ## What Each Sample Contains
 
 Most sample folders contain:

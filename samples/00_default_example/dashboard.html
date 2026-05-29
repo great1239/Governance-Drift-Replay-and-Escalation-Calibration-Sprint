@@ -110,6 +110,8 @@
             <th>Service</th>
             <th>Status</th>
             <th>Governance Drift</th>
+            <th>All Drift Labels</th>
+            <th>Conflict Handling</th>
             <th>Operational Drift</th>
             <th>Expected</th>
             <th>Actual</th>
@@ -124,6 +126,8 @@
               <td>checkout</td>
               <td>healthy</td>
               <td>aligned</td>
+              <td class="compact-text">aligned</td>
+              <td class="compact-text">single drift label</td>
               <td>aligned</td>
               <td>none</td>
               <td>none</td>
@@ -137,6 +141,8 @@
               <td>billing</td>
               <td>degraded</td>
               <td>evidence-drift</td>
+              <td class="compact-text">evidence-drift</td>
+              <td class="compact-text">single drift label</td>
               <td>observability-risk</td>
               <td>incident-commander</td>
               <td>incident-commander</td>
@@ -150,6 +156,8 @@
               <td>payments</td>
               <td>unknown</td>
               <td>authority-drift</td>
+              <td class="compact-text">authority-drift, escalation-drift</td>
+              <td class="compact-text">authority-drift selected by drift_priority over escalation-drift</td>
               <td>authority-risk</td>
               <td>governance-review</td>
               <td>none</td>
@@ -163,6 +171,8 @@
               <td>search</td>
               <td>unknown</td>
               <td>replay-drift</td>
+              <td class="compact-text">replay-drift</td>
+              <td class="compact-text">single drift label</td>
               <td>replay-risk</td>
               <td>team-lead</td>
               <td>team-lead</td>
@@ -176,6 +186,8 @@
               <td>orders</td>
               <td>failed</td>
               <td>escalation-drift</td>
+              <td class="compact-text">escalation-drift</td>
+              <td class="compact-text">single drift label</td>
               <td>authority-risk</td>
               <td>incident-commander</td>
               <td>service-owner</td>
@@ -189,6 +201,8 @@
               <td>auth</td>
               <td>healthy</td>
               <td>escalation-drift</td>
+              <td class="compact-text">escalation-drift</td>
+              <td class="compact-text">single drift label</td>
               <td>authority-risk</td>
               <td>none</td>
               <td>governance-review</td>
@@ -202,6 +216,8 @@
               <td>unknown</td>
               <td>unknown</td>
               <td>ambiguous</td>
+              <td class="compact-text">ambiguous</td>
+              <td class="compact-text">single drift label</td>
               <td>unclear/incomplete</td>
               <td>none</td>
               <td>not-visible</td>

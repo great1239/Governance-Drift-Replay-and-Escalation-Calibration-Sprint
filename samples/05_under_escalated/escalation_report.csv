@@ -1,11 +1,11 @@
-case_id,service,system_status,severity,primary_drift,operational_drift_classification,drift_types,expected_escalation,actual_escalation,calibration,structured,observable,deterministic,governance_safe,safe_to_continue,recommended_action
-S05-001,checkout,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
-S05-002,orders,failed,critical,escalation-drift,authority-risk,aligned; escalation-drift,incident-commander,service-owner,under-escalated,True,True,True,False,False,correct escalation level before continuing
-S05-003,billing,failed,critical,escalation-drift,authority-risk,aligned; escalation-drift,incident-commander,team-lead,under-escalated,True,True,True,False,False,correct escalation level before continuing
-S05-004,search,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
-S05-005,inventory,failed,critical,escalation-drift,authority-risk,aligned; escalation-drift,incident-commander,service-owner,under-escalated,True,True,True,False,False,correct escalation level before continuing
-S05-006,auth,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
-S05-007,payments,unknown,critical,escalation-drift,authority-risk,ambiguous; escalation-drift,incident-commander,team-lead,under-escalated,False,True,True,False,False,correct escalation level before continuing
-S05-008,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
-S05-009,unknown,failed,critical,escalation-drift,authority-risk,aligned; escalation-drift,incident-commander,service-owner,under-escalated,True,True,True,False,False,correct escalation level before continuing
-S05-010,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+case_id,service,system_status,severity,primary_drift,secondary_drifts,conflict_detected,conflict_resolution,operational_drift_classification,drift_types,expected_escalation,actual_escalation,calibration,structured,observable,deterministic,governance_safe,safe_to_continue,recommended_action
+S05-001,checkout,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S05-002,orders,failed,critical,escalation-drift,,False,single drift label,authority-risk,escalation-drift,incident-commander,service-owner,under-escalated,True,True,True,False,False,correct escalation level before continuing
+S05-003,billing,failed,critical,escalation-drift,,False,single drift label,authority-risk,escalation-drift,incident-commander,team-lead,under-escalated,True,True,True,False,False,correct escalation level before continuing
+S05-004,search,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S05-005,inventory,failed,critical,escalation-drift,,False,single drift label,authority-risk,escalation-drift,incident-commander,service-owner,under-escalated,True,True,True,False,False,correct escalation level before continuing
+S05-006,auth,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S05-007,payments,unknown,critical,escalation-drift,ambiguous,True,escalation-drift selected by drift_priority over ambiguous,authority-risk,ambiguous; escalation-drift,incident-commander,team-lead,under-escalated,False,True,True,False,False,correct escalation level before continuing
+S05-008,unknown,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S05-009,unknown,failed,critical,escalation-drift,,False,single drift label,authority-risk,escalation-drift,incident-commander,service-owner,under-escalated,True,True,True,False,False,correct escalation level before continuing
+S05-010,unknown,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring

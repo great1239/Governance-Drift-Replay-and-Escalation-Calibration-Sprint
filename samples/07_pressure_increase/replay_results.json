@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T18:24:05.563978+00:00",
+  "generated_at": "2026-05-29T20:59:13.078345+00:00",
   "input_file": "samples\\07_pressure_increase\\input_updates.json",
   "rules_file": "escalation_rules.json",
   "mode": "stateful",
@@ -84,6 +84,11 @@
         "escalation-drift"
       ],
       "primary_drift": "authority-drift",
+      "secondary_drifts": [
+        "escalation-drift"
+      ],
+      "conflict_detected": true,
+      "conflict_resolution": "authority-drift selected by drift_priority over escalation-drift",
       "operational_drift_classification": "authority-risk",
       "expected_escalation": "governance-review",
       "actual_escalation": "none",
@@ -98,7 +103,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "hold execution until approval and authorization are visible",
-      "replay_hash": "d9929fbf6333b148"
+      "replay_hash": "897ba04e5731ec09"
     },
     {
       "case_id": "S07-006",
@@ -125,6 +130,9 @@
         "replay-drift"
       ],
       "primary_drift": "replay-drift",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "replay-risk",
       "expected_escalation": "team-lead",
       "actual_escalation": "team-lead",
@@ -139,7 +147,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "rerun replay before treating the decision as stable",
-      "replay_hash": "323b04dc7a63a0d9"
+      "replay_hash": "8b7af9fcbe7c729c"
     },
     {
       "case_id": "S07-007",
@@ -169,6 +177,9 @@
         "dependency-drift"
       ],
       "primary_drift": "dependency-drift",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "integration-risk",
       "expected_escalation": "service-owner",
       "actual_escalation": "service-owner",
@@ -183,7 +194,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "resolve dependency blocker or escalate to service owner",
-      "replay_hash": "5c627ee85de465b7"
+      "replay_hash": "c3fbaf00b53429f9"
     },
     {
       "case_id": "S07-008",
@@ -204,10 +215,12 @@
       "owner_state": "visible",
       "dependency_state": "clear",
       "drift_types": [
-        "aligned",
         "escalation-drift"
       ],
       "primary_drift": "escalation-drift",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "authority-risk",
       "expected_escalation": "incident-commander",
       "actual_escalation": "service-owner",
@@ -222,7 +235,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "correct escalation level before continuing",
-      "replay_hash": "dd87e3b01bbe9218"
+      "replay_hash": "28fce70acd09ab81"
     },
     {
       "case_id": "S07-009",
@@ -249,6 +262,9 @@
         "evidence-drift"
       ],
       "primary_drift": "evidence-drift",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "observability-risk",
       "expected_escalation": "incident-commander",
       "actual_escalation": "incident-commander",
@@ -263,7 +279,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "attach trace, logs, or evidence before review",
-      "replay_hash": "9464089ae34a3a77"
+      "replay_hash": "5eaa2e47eff7ac38"
     },
     {
       "case_id": "S07-010",
@@ -287,6 +303,9 @@
         "ambiguous"
       ],
       "primary_drift": "ambiguous",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "unclear/incomplete",
       "expected_escalation": "none",
       "actual_escalation": "not-visible",
@@ -301,7 +320,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "request a clearer operational update",
-      "replay_hash": "6df92ba8beba2cca"
+      "replay_hash": "35fe3e0588a476ea"
     }
   ]
 }

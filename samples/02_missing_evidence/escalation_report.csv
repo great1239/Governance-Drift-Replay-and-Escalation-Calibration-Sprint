@@ -1,11 +1,11 @@
-case_id,service,system_status,severity,primary_drift,operational_drift_classification,drift_types,expected_escalation,actual_escalation,calibration,structured,observable,deterministic,governance_safe,safe_to_continue,recommended_action
-S02-001,checkout,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
-S02-002,billing,degraded,critical,evidence-drift,observability-risk,evidence-drift,incident-commander,incident-commander,calibrated,True,False,True,True,False,"attach trace, logs, or evidence before review"
-S02-003,checkout,degraded,high,evidence-drift,observability-risk,evidence-drift,team-lead,team-lead,calibrated,True,False,True,True,False,"attach trace, logs, or evidence before review"
-S02-004,inventory,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
-S02-005,orders,degraded,high,evidence-drift,observability-risk,evidence-drift; dependency-drift,team-lead,team-lead,calibrated,True,False,True,True,False,"attach trace, logs, or evidence before review"
-S02-006,auth,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
-S02-007,payments,degraded,high,evidence-drift,observability-risk,evidence-drift; dependency-drift,team-lead,team-lead,calibrated,True,False,True,True,False,"attach trace, logs, or evidence before review"
-S02-008,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
-S02-009,unknown,degraded,high,escalation-drift,authority-risk,evidence-drift; escalation-drift,team-lead,incident-commander,over-escalated,True,False,True,False,False,correct escalation level before continuing
-S02-010,unknown,healthy,low,aligned,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+case_id,service,system_status,severity,primary_drift,secondary_drifts,conflict_detected,conflict_resolution,operational_drift_classification,drift_types,expected_escalation,actual_escalation,calibration,structured,observable,deterministic,governance_safe,safe_to_continue,recommended_action
+S02-001,checkout,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S02-002,billing,degraded,critical,evidence-drift,,False,single drift label,observability-risk,evidence-drift,incident-commander,incident-commander,calibrated,True,False,True,True,False,"attach trace, logs, or evidence before review"
+S02-003,checkout,degraded,high,evidence-drift,,False,single drift label,observability-risk,evidence-drift,team-lead,team-lead,calibrated,True,False,True,True,False,"attach trace, logs, or evidence before review"
+S02-004,inventory,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S02-005,orders,degraded,high,evidence-drift,dependency-drift,True,evidence-drift selected by drift_priority over dependency-drift,observability-risk,evidence-drift; dependency-drift,team-lead,team-lead,calibrated,True,False,True,True,False,"attach trace, logs, or evidence before review"
+S02-006,auth,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S02-007,payments,degraded,high,evidence-drift,dependency-drift,True,evidence-drift selected by drift_priority over dependency-drift,observability-risk,evidence-drift; dependency-drift,team-lead,team-lead,calibrated,True,False,True,True,False,"attach trace, logs, or evidence before review"
+S02-008,unknown,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring
+S02-009,unknown,degraded,high,escalation-drift,evidence-drift,True,escalation-drift selected by drift_priority over evidence-drift,authority-risk,evidence-drift; escalation-drift,team-lead,incident-commander,over-escalated,True,False,True,False,False,correct escalation level before continuing
+S02-010,unknown,healthy,low,aligned,,False,single drift label,aligned,aligned,none,none,calibrated,True,True,True,True,True,continue with normal monitoring

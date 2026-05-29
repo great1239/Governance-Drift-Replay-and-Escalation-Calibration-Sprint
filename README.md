@@ -162,6 +162,14 @@ Input: [input](samples/08_ambiguous_input/input_updates.json)
 Dashboard: [dashboard](samples/08_ambiguous_input/dashboard.html)  
 Screenshot: [screenshot](samples/08_ambiguous_input/screenshot.png)
 
+### 09 Conflict Handling
+
+Proves: deterministic priority when one update has multiple drift signals  
+Notes: [notes](samples/09_conflict_handling/notes.md)  
+Input: [input](samples/09_conflict_handling/input_updates.json)  
+Dashboard: [dashboard](samples/09_conflict_handling/dashboard.html)  
+Screenshot: [screenshot](samples/09_conflict_handling/screenshot.png)
+
 ## Drift And Calibration Labels
 
 Governance drift labels:
@@ -189,6 +197,10 @@ Escalation calibration:
 - `calibrated`
 - `under-escalated`
 - `over-escalated`
+
+Conflict handling:
+
+When one update matches several drift labels, the program keeps every matching label in `drift_types`, stores the non-primary labels in `secondary_drifts`, and explains the selected primary label in `conflict_resolution`.
 
 ## Pressure Comparison
 

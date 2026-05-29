@@ -1,0 +1,560 @@
+{
+  "generated_at": "2026-05-29T20:59:10.653955+00:00",
+  "input_file": "samples\\09_conflict_handling\\input_updates.json",
+  "rules_file": "escalation_rules.json",
+  "mode": "full",
+  "total_input_records": 10,
+  "analyzed_records": 10,
+  "summary": {
+    "total_cases": 10,
+    "deterministic_replay_pass": true,
+    "drift_counts": {
+      "authority-drift": 3,
+      "replay-drift": 1,
+      "ownership-drift": 1,
+      "escalation-drift": 4,
+      "aligned": 1
+    },
+    "operational_drift_counts": {
+      "authority-risk": 7,
+      "replay-risk": 1,
+      "integration-risk": 1,
+      "aligned": 1
+    },
+    "calibration_counts": {
+      "under-escalated": 6,
+      "calibrated": 2,
+      "over-escalated": 2
+    },
+    "metric_rates": {
+      "structured": 70.0,
+      "observable": 40.0,
+      "deterministic": 60.0,
+      "governance_safe": 20.0
+    },
+    "unsafe_cases": [
+      "S09-001",
+      "S09-002",
+      "S09-004",
+      "S09-005",
+      "S09-006",
+      "S09-008",
+      "S09-009",
+      "S09-010"
+    ]
+  },
+  "pressure_comparison": {
+    "enabled": false,
+    "state_file": "samples\\09_conflict_handling\\last_run_state.json",
+    "pressure_direction": "not-tracked",
+    "stable_under_pressure": null,
+    "metric_deltas": {},
+    "note": "state tracking disabled for this run"
+  },
+  "cases": [
+    {
+      "case_id": "S09-001",
+      "timestamp": "2026-05-29T10:00:00Z",
+      "raw_update": "Payments production fix used manual override without approval by unauthorized contractor. Missing trace. Replay mismatch. Blocked by database. No owner. No escalation.",
+      "service": "payments",
+      "system_status": "blocked",
+      "blockers": [
+        "blocked"
+      ],
+      "dependencies": [
+        "blocked by",
+        "database"
+      ],
+      "replay_risks": [
+        "replay mismatch"
+      ],
+      "observability_risks": [
+        "missing trace"
+      ],
+      "governance_risks": [
+        "without approval",
+        "unauthorized",
+        "manual override"
+      ],
+      "severity": "critical",
+      "evidence_state": "missing",
+      "approval_state": "unsafe",
+      "actor_authorized": "no",
+      "replay_state": "mismatch",
+      "owner_state": "missing",
+      "dependency_state": "blocked",
+      "drift_types": [
+        "authority-drift",
+        "replay-drift",
+        "evidence-drift",
+        "ownership-drift",
+        "dependency-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "authority-drift",
+      "secondary_drifts": [
+        "replay-drift",
+        "evidence-drift",
+        "ownership-drift",
+        "dependency-drift",
+        "escalation-drift"
+      ],
+      "conflict_detected": true,
+      "conflict_resolution": "authority-drift selected by drift_priority over replay-drift, evidence-drift, ownership-drift, dependency-drift, escalation-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "governance-review",
+      "actual_escalation": "none",
+      "escalation_rule": "authority_governance_review",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": true,
+        "observable": false,
+        "deterministic": false,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "hold execution until approval and authorization are visible",
+      "replay_hash": "ac9e209d9122895f"
+    },
+    {
+      "case_id": "S09-002",
+      "timestamp": "2026-05-29T10:03:00Z",
+      "raw_update": "Checkout latency degraded. Missing evidence. Replay mismatch. Escalated to service owner.",
+      "service": "checkout",
+      "system_status": "degraded",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [
+        "replay mismatch"
+      ],
+      "observability_risks": [
+        "missing evidence"
+      ],
+      "governance_risks": [],
+      "severity": "high",
+      "evidence_state": "missing",
+      "approval_state": "unknown",
+      "actor_authorized": "unknown",
+      "replay_state": "mismatch",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "replay-drift",
+        "evidence-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "replay-drift",
+      "secondary_drifts": [
+        "evidence-drift",
+        "escalation-drift"
+      ],
+      "conflict_detected": true,
+      "conflict_resolution": "replay-drift selected by drift_priority over evidence-drift, escalation-drift",
+      "operational_drift_classification": "replay-risk",
+      "expected_escalation": "team-lead",
+      "actual_escalation": "service-owner",
+      "escalation_rule": "replay_team_lead",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": true,
+        "observable": false,
+        "deterministic": false,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "rerun replay before treating the decision as stable",
+      "replay_hash": "d35542dc77ba77c6"
+    },
+    {
+      "case_id": "S09-003",
+      "timestamp": "2026-05-29T10:06:00Z",
+      "raw_update": "Billing queue blocked by vendor API. No owner. Logs attached. Escalated to service owner.",
+      "service": "billing",
+      "system_status": "blocked",
+      "blockers": [
+        "blocked"
+      ],
+      "dependencies": [
+        "blocked by",
+        "vendor",
+        "api",
+        "queue"
+      ],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [],
+      "severity": "medium",
+      "evidence_state": "present",
+      "approval_state": "unknown",
+      "actor_authorized": "unknown",
+      "replay_state": "unknown",
+      "owner_state": "missing",
+      "dependency_state": "blocked",
+      "drift_types": [
+        "ownership-drift",
+        "dependency-drift"
+      ],
+      "primary_drift": "ownership-drift",
+      "secondary_drifts": [
+        "dependency-drift"
+      ],
+      "conflict_detected": true,
+      "conflict_resolution": "ownership-drift selected by drift_priority over dependency-drift",
+      "operational_drift_classification": "integration-risk",
+      "expected_escalation": "service-owner",
+      "actual_escalation": "service-owner",
+      "escalation_rule": "dependency_or_owner_service_owner",
+      "calibration": "calibrated",
+      "calibration_reason": "actual escalation matched expected escalation",
+      "checks": {
+        "structured": true,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": true
+      },
+      "safe_to_continue": true,
+      "recommended_action": "assign an owner before execution continues",
+      "replay_hash": "03e9bdda2e82373b"
+    },
+    {
+      "case_id": "S09-004",
+      "timestamp": "2026-05-29T10:09:00Z",
+      "raw_update": "Search service stable. Trace attached. Approval granted. Replay matched. Escalated to governance review.",
+      "service": "search",
+      "system_status": "healthy",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [],
+      "severity": "low",
+      "evidence_state": "present",
+      "approval_state": "approved",
+      "actor_authorized": "unknown",
+      "replay_state": "matched",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "escalation-drift"
+      ],
+      "primary_drift": "escalation-drift",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "none",
+      "actual_escalation": "governance-review",
+      "escalation_rule": "default",
+      "calibration": "over-escalated",
+      "calibration_reason": "actual escalation was higher than expected",
+      "checks": {
+        "structured": true,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "correct escalation level before continuing",
+      "replay_hash": "5e7bdfdaf2117c7d"
+    },
+    {
+      "case_id": "S09-005",
+      "timestamp": "2026-05-29T10:12:00Z",
+      "raw_update": "Inventory access change has approval pending. No logs. Replay mismatch. Escalated to team lead.",
+      "service": "inventory",
+      "system_status": "unknown",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [
+        "replay mismatch"
+      ],
+      "observability_risks": [
+        "no log",
+        "no logs"
+      ],
+      "governance_risks": [
+        "approval pending"
+      ],
+      "severity": "high",
+      "evidence_state": "missing",
+      "approval_state": "unsafe",
+      "actor_authorized": "unknown",
+      "replay_state": "mismatch",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "authority-drift",
+        "replay-drift",
+        "evidence-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "authority-drift",
+      "secondary_drifts": [
+        "replay-drift",
+        "evidence-drift",
+        "escalation-drift"
+      ],
+      "conflict_detected": true,
+      "conflict_resolution": "authority-drift selected by drift_priority over replay-drift, evidence-drift, escalation-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "governance-review",
+      "actual_escalation": "team-lead",
+      "escalation_rule": "authority_governance_review",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": false,
+        "observable": false,
+        "deterministic": false,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "hold execution until approval and authorization are visible",
+      "replay_hash": "41d26396f04a08c7"
+    },
+    {
+      "case_id": "S09-006",
+      "timestamp": "2026-05-29T10:15:00Z",
+      "raw_update": "Auth integration is blocked by external API. Missing metrics. Escalated to team lead.",
+      "service": "auth",
+      "system_status": "blocked",
+      "blockers": [
+        "blocked"
+      ],
+      "dependencies": [
+        "blocked by",
+        "api",
+        "integration"
+      ],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [],
+      "severity": "medium",
+      "evidence_state": "unknown",
+      "approval_state": "unknown",
+      "actor_authorized": "unknown",
+      "replay_state": "unknown",
+      "owner_state": "visible",
+      "dependency_state": "blocked",
+      "drift_types": [
+        "dependency-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "escalation-drift",
+      "secondary_drifts": [
+        "dependency-drift"
+      ],
+      "conflict_detected": true,
+      "conflict_resolution": "escalation-drift selected by drift_priority over dependency-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "service-owner",
+      "actual_escalation": "team-lead",
+      "escalation_rule": "dependency_or_owner_service_owner",
+      "calibration": "over-escalated",
+      "calibration_reason": "actual escalation was higher than expected",
+      "checks": {
+        "structured": true,
+        "observable": false,
+        "deterministic": true,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "correct escalation level before continuing",
+      "replay_hash": "326e5660bbd4afa0"
+    },
+    {
+      "case_id": "S09-007",
+      "timestamp": "2026-05-29T10:18:00Z",
+      "raw_update": "Notifications service healthy. Dashboard linked. Approval granted. Replay matched. No escalation required.",
+      "service": "unknown",
+      "system_status": "healthy",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [],
+      "governance_risks": [],
+      "severity": "low",
+      "evidence_state": "present",
+      "approval_state": "approved",
+      "actor_authorized": "unknown",
+      "replay_state": "matched",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "aligned"
+      ],
+      "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
+      "operational_drift_classification": "aligned",
+      "expected_escalation": "none",
+      "actual_escalation": "none",
+      "escalation_rule": "default",
+      "calibration": "calibrated",
+      "calibration_reason": "actual escalation matched expected escalation",
+      "checks": {
+        "structured": true,
+        "observable": true,
+        "deterministic": true,
+        "governance_safe": true
+      },
+      "safe_to_continue": true,
+      "recommended_action": "continue with normal monitoring",
+      "replay_hash": "50b201f4e46d89a5"
+    },
+    {
+      "case_id": "S09-008",
+      "timestamp": "2026-05-29T10:21:00Z",
+      "raw_update": "Orders production release bypassed approval. Replay mismatch. Evidence attached. Escalated to incident commander.",
+      "service": "orders",
+      "system_status": "unknown",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [
+        "replay mismatch"
+      ],
+      "observability_risks": [],
+      "governance_risks": [
+        "bypassed approval"
+      ],
+      "severity": "critical",
+      "evidence_state": "present",
+      "approval_state": "unsafe",
+      "actor_authorized": "unknown",
+      "replay_state": "mismatch",
+      "owner_state": "visible",
+      "dependency_state": "clear",
+      "drift_types": [
+        "authority-drift",
+        "replay-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "authority-drift",
+      "secondary_drifts": [
+        "replay-drift",
+        "escalation-drift"
+      ],
+      "conflict_detected": true,
+      "conflict_resolution": "authority-drift selected by drift_priority over replay-drift, escalation-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "governance-review",
+      "actual_escalation": "incident-commander",
+      "escalation_rule": "authority_governance_review",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": false,
+        "observable": true,
+        "deterministic": false,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "hold execution until approval and authorization are visible",
+      "replay_hash": "02073db988324f80"
+    },
+    {
+      "case_id": "S09-009",
+      "timestamp": "2026-05-29T10:24:00Z",
+      "raw_update": "Catalog slow. No trace. Waiting on queue. Escalated to service owner.",
+      "service": "queue",
+      "system_status": "degraded",
+      "blockers": [
+        "waiting"
+      ],
+      "dependencies": [
+        "waiting on",
+        "queue"
+      ],
+      "replay_risks": [],
+      "observability_risks": [
+        "no trace"
+      ],
+      "governance_risks": [],
+      "severity": "high",
+      "evidence_state": "missing",
+      "approval_state": "unknown",
+      "actor_authorized": "unknown",
+      "replay_state": "unknown",
+      "owner_state": "visible",
+      "dependency_state": "blocked",
+      "drift_types": [
+        "evidence-drift",
+        "dependency-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "escalation-drift",
+      "secondary_drifts": [
+        "evidence-drift",
+        "dependency-drift"
+      ],
+      "conflict_detected": true,
+      "conflict_resolution": "escalation-drift selected by drift_priority over evidence-drift, dependency-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "team-lead",
+      "actual_escalation": "service-owner",
+      "escalation_rule": "evidence_team_lead",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": true,
+        "observable": false,
+        "deterministic": true,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "correct escalation level before continuing",
+      "replay_hash": "4d1ff5dc45d2eb26"
+    },
+    {
+      "case_id": "S09-010",
+      "timestamp": "2026-05-29T10:27:00Z",
+      "raw_update": "Support handoff unclear. No owner. Missing evidence. No escalation.",
+      "service": "unknown",
+      "system_status": "unknown",
+      "blockers": [],
+      "dependencies": [],
+      "replay_risks": [],
+      "observability_risks": [
+        "missing evidence"
+      ],
+      "governance_risks": [],
+      "severity": "high",
+      "evidence_state": "missing",
+      "approval_state": "unknown",
+      "actor_authorized": "unknown",
+      "replay_state": "unknown",
+      "owner_state": "missing",
+      "dependency_state": "clear",
+      "drift_types": [
+        "evidence-drift",
+        "ownership-drift",
+        "escalation-drift"
+      ],
+      "primary_drift": "escalation-drift",
+      "secondary_drifts": [
+        "evidence-drift",
+        "ownership-drift"
+      ],
+      "conflict_detected": true,
+      "conflict_resolution": "escalation-drift selected by drift_priority over evidence-drift, ownership-drift",
+      "operational_drift_classification": "authority-risk",
+      "expected_escalation": "team-lead",
+      "actual_escalation": "none",
+      "escalation_rule": "evidence_team_lead",
+      "calibration": "under-escalated",
+      "calibration_reason": "actual escalation was lower than expected",
+      "checks": {
+        "structured": false,
+        "observable": false,
+        "deterministic": true,
+        "governance_safe": false
+      },
+      "safe_to_continue": false,
+      "recommended_action": "correct escalation level before continuing",
+      "replay_hash": "7a8b8f7bd31327b7"
+    }
+  ]
+}

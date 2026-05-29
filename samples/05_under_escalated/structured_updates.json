@@ -21,6 +21,9 @@
       "aligned"
     ],
     "primary_drift": "aligned",
+    "secondary_drifts": [],
+    "conflict_detected": false,
+    "conflict_resolution": "single drift label",
     "operational_drift_classification": "aligned",
     "expected_escalation": "none",
     "actual_escalation": "none",
@@ -35,7 +38,7 @@
     },
     "safe_to_continue": true,
     "recommended_action": "continue with normal monitoring",
-    "replay_hash": "4c71734c9760a79c"
+    "replay_hash": "42c2cc53f5cea214"
   },
   {
     "case_id": "S05-002",
@@ -56,10 +59,12 @@
     "owner_state": "visible",
     "dependency_state": "clear",
     "drift_types": [
-      "aligned",
       "escalation-drift"
     ],
     "primary_drift": "escalation-drift",
+    "secondary_drifts": [],
+    "conflict_detected": false,
+    "conflict_resolution": "single drift label",
     "operational_drift_classification": "authority-risk",
     "expected_escalation": "incident-commander",
     "actual_escalation": "service-owner",
@@ -74,7 +79,7 @@
     },
     "safe_to_continue": false,
     "recommended_action": "correct escalation level before continuing",
-    "replay_hash": "2252bd57712bed74"
+    "replay_hash": "c801979410059ace"
   },
   {
     "case_id": "S05-003",
@@ -95,10 +100,12 @@
     "owner_state": "visible",
     "dependency_state": "clear",
     "drift_types": [
-      "aligned",
       "escalation-drift"
     ],
     "primary_drift": "escalation-drift",
+    "secondary_drifts": [],
+    "conflict_detected": false,
+    "conflict_resolution": "single drift label",
     "operational_drift_classification": "authority-risk",
     "expected_escalation": "incident-commander",
     "actual_escalation": "team-lead",
@@ -113,7 +120,7 @@
     },
     "safe_to_continue": false,
     "recommended_action": "correct escalation level before continuing",
-    "replay_hash": "e0f63589d6ef929c"
+    "replay_hash": "e0aa3790f7b8a50c"
   },
   {
     "case_id": "S05-004",
@@ -137,6 +144,9 @@
       "aligned"
     ],
     "primary_drift": "aligned",
+    "secondary_drifts": [],
+    "conflict_detected": false,
+    "conflict_resolution": "single drift label",
     "operational_drift_classification": "aligned",
     "expected_escalation": "none",
     "actual_escalation": "none",
@@ -151,7 +161,7 @@
     },
     "safe_to_continue": true,
     "recommended_action": "continue with normal monitoring",
-    "replay_hash": "30a044d86c341d82"
+    "replay_hash": "2b788f3bce0b4786"
   },
   {
     "case_id": "S05-005",
@@ -172,10 +182,12 @@
     "owner_state": "visible",
     "dependency_state": "clear",
     "drift_types": [
-      "aligned",
       "escalation-drift"
     ],
     "primary_drift": "escalation-drift",
+    "secondary_drifts": [],
+    "conflict_detected": false,
+    "conflict_resolution": "single drift label",
     "operational_drift_classification": "authority-risk",
     "expected_escalation": "incident-commander",
     "actual_escalation": "service-owner",
@@ -190,7 +202,7 @@
     },
     "safe_to_continue": false,
     "recommended_action": "correct escalation level before continuing",
-    "replay_hash": "fd77bbde4646ec25"
+    "replay_hash": "1f8744316eeca9cc"
   },
   {
     "case_id": "S05-006",
@@ -214,6 +226,9 @@
       "aligned"
     ],
     "primary_drift": "aligned",
+    "secondary_drifts": [],
+    "conflict_detected": false,
+    "conflict_resolution": "single drift label",
     "operational_drift_classification": "aligned",
     "expected_escalation": "none",
     "actual_escalation": "none",
@@ -228,7 +243,7 @@
     },
     "safe_to_continue": true,
     "recommended_action": "continue with normal monitoring",
-    "replay_hash": "711e355a33b67af4"
+    "replay_hash": "ed96bc5816e2f5e0"
   },
   {
     "case_id": "S05-007",
@@ -253,6 +268,11 @@
       "escalation-drift"
     ],
     "primary_drift": "escalation-drift",
+    "secondary_drifts": [
+      "ambiguous"
+    ],
+    "conflict_detected": true,
+    "conflict_resolution": "escalation-drift selected by drift_priority over ambiguous",
     "operational_drift_classification": "authority-risk",
     "expected_escalation": "incident-commander",
     "actual_escalation": "team-lead",
@@ -267,7 +287,7 @@
     },
     "safe_to_continue": false,
     "recommended_action": "correct escalation level before continuing",
-    "replay_hash": "7db1c8d3d078d1c2"
+    "replay_hash": "3e4fc147ab1553df"
   },
   {
     "case_id": "S05-008",
@@ -291,6 +311,9 @@
       "aligned"
     ],
     "primary_drift": "aligned",
+    "secondary_drifts": [],
+    "conflict_detected": false,
+    "conflict_resolution": "single drift label",
     "operational_drift_classification": "aligned",
     "expected_escalation": "none",
     "actual_escalation": "none",
@@ -305,7 +328,7 @@
     },
     "safe_to_continue": true,
     "recommended_action": "continue with normal monitoring",
-    "replay_hash": "fc0ad937b848dc27"
+    "replay_hash": "e1b05347a02909fb"
   },
   {
     "case_id": "S05-009",
@@ -326,10 +349,12 @@
     "owner_state": "visible",
     "dependency_state": "clear",
     "drift_types": [
-      "aligned",
       "escalation-drift"
     ],
     "primary_drift": "escalation-drift",
+    "secondary_drifts": [],
+    "conflict_detected": false,
+    "conflict_resolution": "single drift label",
     "operational_drift_classification": "authority-risk",
     "expected_escalation": "incident-commander",
     "actual_escalation": "service-owner",
@@ -344,7 +369,7 @@
     },
     "safe_to_continue": false,
     "recommended_action": "correct escalation level before continuing",
-    "replay_hash": "4d6884338135893a"
+    "replay_hash": "e4f29c287dac4588"
   },
   {
     "case_id": "S05-010",
@@ -368,6 +393,9 @@
       "aligned"
     ],
     "primary_drift": "aligned",
+    "secondary_drifts": [],
+    "conflict_detected": false,
+    "conflict_resolution": "single drift label",
     "operational_drift_classification": "aligned",
     "expected_escalation": "none",
     "actual_escalation": "none",
@@ -382,6 +410,6 @@
     },
     "safe_to_continue": true,
     "recommended_action": "continue with normal monitoring",
-    "replay_hash": "ade8e2b70322c2c5"
+    "replay_hash": "28c89f6017819327"
   }
 ]

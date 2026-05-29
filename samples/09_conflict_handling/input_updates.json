@@ -1,0 +1,52 @@
+[
+  {
+    "case_id": "S09-001",
+    "timestamp": "2026-05-29T10:00:00Z",
+    "update": "Payments production fix used manual override without approval by unauthorized contractor. Missing trace. Replay mismatch. Blocked by database. No owner. No escalation."
+  },
+  {
+    "case_id": "S09-002",
+    "timestamp": "2026-05-29T10:03:00Z",
+    "update": "Checkout latency degraded. Missing evidence. Replay mismatch. Escalated to service owner."
+  },
+  {
+    "case_id": "S09-003",
+    "timestamp": "2026-05-29T10:06:00Z",
+    "update": "Billing queue blocked by vendor API. No owner. Logs attached. Escalated to service owner."
+  },
+  {
+    "case_id": "S09-004",
+    "timestamp": "2026-05-29T10:09:00Z",
+    "update": "Search service stable. Trace attached. Approval granted. Replay matched. Escalated to governance review."
+  },
+  {
+    "case_id": "S09-005",
+    "timestamp": "2026-05-29T10:12:00Z",
+    "update": "Inventory access change has approval pending. No logs. Replay mismatch. Escalated to team lead."
+  },
+  {
+    "case_id": "S09-006",
+    "timestamp": "2026-05-29T10:15:00Z",
+    "update": "Auth integration is blocked by external API. Missing metrics. Escalated to team lead."
+  },
+  {
+    "case_id": "S09-007",
+    "timestamp": "2026-05-29T10:18:00Z",
+    "update": "Notifications service healthy. Dashboard linked. Approval granted. Replay matched. No escalation required."
+  },
+  {
+    "case_id": "S09-008",
+    "timestamp": "2026-05-29T10:21:00Z",
+    "update": "Orders production release bypassed approval. Replay mismatch. Evidence attached. Escalated to incident commander."
+  },
+  {
+    "case_id": "S09-009",
+    "timestamp": "2026-05-29T10:24:00Z",
+    "update": "Catalog slow. No trace. Waiting on queue. Escalated to service owner."
+  },
+  {
+    "case_id": "S09-010",
+    "timestamp": "2026-05-29T10:27:00Z",
+    "update": "Support handoff unclear. No owner. Missing evidence. No escalation."
+  }
+]

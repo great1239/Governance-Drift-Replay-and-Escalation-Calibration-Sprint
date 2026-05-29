@@ -104,6 +104,8 @@
             <th>Service</th>
             <th>Status</th>
             <th>Governance Drift</th>
+            <th>All Drift Labels</th>
+            <th>Conflict Handling</th>
             <th>Operational Drift</th>
             <th>Expected</th>
             <th>Actual</th>
@@ -118,6 +120,8 @@
               <td>checkout</td>
               <td>healthy</td>
               <td>aligned</td>
+              <td class="compact-text">aligned</td>
+              <td class="compact-text">single drift label</td>
               <td>aligned</td>
               <td>none</td>
               <td>none</td>
@@ -131,6 +135,8 @@
               <td>billing</td>
               <td>degraded</td>
               <td>evidence-drift</td>
+              <td class="compact-text">evidence-drift</td>
+              <td class="compact-text">single drift label</td>
               <td>observability-risk</td>
               <td>incident-commander</td>
               <td>incident-commander</td>
@@ -144,6 +150,8 @@
               <td>checkout</td>
               <td>degraded</td>
               <td>evidence-drift</td>
+              <td class="compact-text">evidence-drift</td>
+              <td class="compact-text">single drift label</td>
               <td>observability-risk</td>
               <td>team-lead</td>
               <td>team-lead</td>
@@ -157,6 +165,8 @@
               <td>inventory</td>
               <td>healthy</td>
               <td>aligned</td>
+              <td class="compact-text">aligned</td>
+              <td class="compact-text">single drift label</td>
               <td>aligned</td>
               <td>none</td>
               <td>none</td>
@@ -170,6 +180,8 @@
               <td>orders</td>
               <td>degraded</td>
               <td>evidence-drift</td>
+              <td class="compact-text">evidence-drift, dependency-drift</td>
+              <td class="compact-text">evidence-drift selected by drift_priority over dependency-drift</td>
               <td>observability-risk</td>
               <td>team-lead</td>
               <td>team-lead</td>
@@ -183,6 +195,8 @@
               <td>auth</td>
               <td>healthy</td>
               <td>aligned</td>
+              <td class="compact-text">aligned</td>
+              <td class="compact-text">single drift label</td>
               <td>aligned</td>
               <td>none</td>
               <td>none</td>
@@ -196,6 +210,8 @@
               <td>payments</td>
               <td>degraded</td>
               <td>evidence-drift</td>
+              <td class="compact-text">evidence-drift, dependency-drift</td>
+              <td class="compact-text">evidence-drift selected by drift_priority over dependency-drift</td>
               <td>observability-risk</td>
               <td>team-lead</td>
               <td>team-lead</td>
@@ -209,6 +225,8 @@
               <td>unknown</td>
               <td>healthy</td>
               <td>aligned</td>
+              <td class="compact-text">aligned</td>
+              <td class="compact-text">single drift label</td>
               <td>aligned</td>
               <td>none</td>
               <td>none</td>
@@ -222,6 +240,8 @@
               <td>unknown</td>
               <td>degraded</td>
               <td>escalation-drift</td>
+              <td class="compact-text">evidence-drift, escalation-drift</td>
+              <td class="compact-text">escalation-drift selected by drift_priority over evidence-drift</td>
               <td>authority-risk</td>
               <td>team-lead</td>
               <td>incident-commander</td>
@@ -235,6 +255,8 @@
               <td>unknown</td>
               <td>healthy</td>
               <td>aligned</td>
+              <td class="compact-text">aligned</td>
+              <td class="compact-text">single drift label</td>
               <td>aligned</td>
               <td>none</td>
               <td>none</td>

@@ -138,6 +138,11 @@ th {
   min-width: 220px;
 }
 
+.compact-text {
+  min-width: 180px;
+  line-height: 1.35;
+}
+
 .check {
   display: inline-block;
   border-radius: 999px;

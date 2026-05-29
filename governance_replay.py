@@ -497,8 +497,19 @@ def parse_update(item, index, rules):
 
     if calibration in ("under-escalated", "over-escalated") and "escalation-drift" not in drift_types:
         drift_types.append("escalation-drift")
+    if len(drift_types) > 1 and "aligned" in drift_types:
+        drift_types = [drift for drift in drift_types if drift != "aligned"]
 
     primary_drift = classify_primary(drift_types, rules["drift_priority"])
+    secondary_drifts = [drift for drift in drift_types if drift != primary_drift]
+    conflict_detected = bool(secondary_drifts)
+    if conflict_detected:
+        conflict_resolution = (
+            f"{primary_drift} selected by drift_priority over "
+            f"{', '.join(secondary_drifts)}"
+        )
+    else:
+        conflict_resolution = "single drift label"
     operational_classification = legacy_classification(primary_drift)
     blockers = extract_matches(text, keywords["status_blocked"])
     dependencies = extract_matches(text, keywords["dependency_risk"])
@@ -554,6 +565,9 @@ def parse_update(item, index, rules):
         "dependency_state": dependency_state,
         "drift_types": drift_types,
         "primary_drift": primary_drift,
+        "secondary_drifts": secondary_drifts,
+        "conflict_detected": conflict_detected,
+        "conflict_resolution": conflict_resolution,
         "operational_drift_classification": operational_classification,
         "expected_escalation": expected_escalation,
         "actual_escalation": actual_escalation,
@@ -740,6 +754,9 @@ def write_csv(path, cases):
         "system_status",
         "severity",
         "primary_drift",
+        "secondary_drifts",
+        "conflict_detected",
+        "conflict_resolution",
         "operational_drift_classification",
         "drift_types",
         "expected_escalation",
@@ -763,6 +780,9 @@ def write_csv(path, cases):
                     "system_status": case["system_status"],
                     "severity": case["severity"],
                     "primary_drift": case["primary_drift"],
+                    "secondary_drifts": "; ".join(case["secondary_drifts"]),
+                    "conflict_detected": case["conflict_detected"],
+                    "conflict_resolution": case["conflict_resolution"],
                     "operational_drift_classification": case["operational_drift_classification"],
                     "drift_types": "; ".join(case["drift_types"]),
                     "expected_escalation": case["expected_escalation"],
@@ -874,6 +894,8 @@ def write_dashboard(path, cases, summary, pressure):
               <td>{html.escape(case["service"])}</td>
               <td>{html.escape(case["system_status"])}</td>
               <td>{html.escape(case["primary_drift"])}</td>
+              <td class="compact-text">{html.escape(', '.join(case["drift_types"]))}</td>
+              <td class="compact-text">{html.escape(case["conflict_resolution"])}</td>
               <td>{html.escape(case["operational_drift_classification"])}</td>
               <td>{html.escape(case["expected_escalation"])}</td>
               <td>{html.escape(case["actual_escalation"])}</td>
@@ -962,6 +984,8 @@ def write_dashboard(path, cases, summary, pressure):
             <th>Service</th>
             <th>Status</th>
             <th>Governance Drift</th>
+            <th>All Drift Labels</th>
+            <th>Conflict Handling</th>
             <th>Operational Drift</th>
             <th>Expected</th>
             <th>Actual</th>

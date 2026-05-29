@@ -50,6 +50,7 @@ The `samples` folder contains focused proof cases:
 - `06_over_escalated`: escalation too high
 - `07_pressure_increase`: pressure comparison across runs
 - `08_ambiguous_input`: vague/mangled input handling
+- `09_conflict_handling`: multiple drift signals resolved by deterministic priority
 
 Each sample includes the messy input, structured output, replay result, CSV, dashboard, screenshot, and notes.
 
@@ -93,6 +94,8 @@ Each messy update is converted into:
 - owner state
 - dependency state
 - drift labels
+- secondary drift labels
+- conflict resolution
 - expected escalation
 - actual escalation
 - escalation calibration
@@ -136,6 +139,8 @@ If one update has multiple drift signals, primary drift is chosen in this order:
 8. `aligned`
 
 The priority is visible in `escalation_rules.json`.
+
+The conflict proof is saved in `samples/09_conflict_handling`. Each row keeps all matching labels in `drift_types` and explains the selected primary label in `conflict_resolution`.
 
 ## Escalation Calibration
 

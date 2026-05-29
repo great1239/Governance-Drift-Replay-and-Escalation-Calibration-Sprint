@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T18:24:03.343412+00:00",
+  "generated_at": "2026-05-29T20:59:09.984969+00:00",
   "input_file": "samples\\08_ambiguous_input\\input_updates.json",
   "rules_file": "escalation_rules.json",
   "mode": "full",
@@ -64,6 +64,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -78,7 +81,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "4e160aa377661116"
+      "replay_hash": "07563d08b69eea40"
     },
     {
       "case_id": "S08-002",
@@ -102,6 +105,9 @@
         "ambiguous"
       ],
       "primary_drift": "ambiguous",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "unclear/incomplete",
       "expected_escalation": "none",
       "actual_escalation": "not-visible",
@@ -116,7 +122,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "request a clearer operational update",
-      "replay_hash": "e037b4df8158f370"
+      "replay_hash": "52ab459bb43732dd"
     },
     {
       "case_id": "S08-003",
@@ -140,6 +146,9 @@
         "ambiguous"
       ],
       "primary_drift": "ambiguous",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "unclear/incomplete",
       "expected_escalation": "none",
       "actual_escalation": "not-visible",
@@ -154,7 +163,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "request a clearer operational update",
-      "replay_hash": "0d670620eb6ff70b"
+      "replay_hash": "572b554b580b8f1f"
     },
     {
       "case_id": "S08-004",
@@ -178,6 +187,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -192,7 +204,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "b5c174342adcb127"
+      "replay_hash": "538f856fc65c1565"
     },
     {
       "case_id": "S08-005",
@@ -216,6 +228,9 @@
         "ambiguous"
       ],
       "primary_drift": "ambiguous",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "unclear/incomplete",
       "expected_escalation": "none",
       "actual_escalation": "not-visible",
@@ -230,7 +245,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "request a clearer operational update",
-      "replay_hash": "d6bd0684f80e9eb7"
+      "replay_hash": "e7c7487147b300b0"
     },
     {
       "case_id": "S08-006",
@@ -254,6 +269,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -268,7 +286,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "8349b0c6ba58631f"
+      "replay_hash": "5154f084b972479e"
     },
     {
       "case_id": "S08-007",
@@ -292,6 +310,9 @@
         "ambiguous"
       ],
       "primary_drift": "ambiguous",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "unclear/incomplete",
       "expected_escalation": "none",
       "actual_escalation": "not-visible",
@@ -306,7 +327,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "request a clearer operational update",
-      "replay_hash": "6a70e405adb6aa7e"
+      "replay_hash": "de7e5bb8535fb1cf"
     },
     {
       "case_id": "S08-008",
@@ -330,6 +351,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -344,7 +368,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "0818ebfb7108679b"
+      "replay_hash": "eba0cbf0d2ba918d"
     },
     {
       "case_id": "S08-009",
@@ -368,6 +392,9 @@
         "ambiguous"
       ],
       "primary_drift": "ambiguous",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "unclear/incomplete",
       "expected_escalation": "none",
       "actual_escalation": "not-visible",
@@ -382,7 +409,7 @@
       },
       "safe_to_continue": false,
       "recommended_action": "request a clearer operational update",
-      "replay_hash": "0dd05aa0ea7493ef"
+      "replay_hash": "3419b7c5fb5dabd9"
     },
     {
       "case_id": "S08-010",
@@ -406,6 +433,9 @@
         "aligned"
       ],
       "primary_drift": "aligned",
+      "secondary_drifts": [],
+      "conflict_detected": false,
+      "conflict_resolution": "single drift label",
       "operational_drift_classification": "aligned",
       "expected_escalation": "none",
       "actual_escalation": "none",
@@ -420,7 +450,7 @@
       },
       "safe_to_continue": true,
       "recommended_action": "continue with normal monitoring",
-      "replay_hash": "b9dc0b40f36685fc"
+      "replay_hash": "b099f4d222fba33b"
     }
   ]
 }
