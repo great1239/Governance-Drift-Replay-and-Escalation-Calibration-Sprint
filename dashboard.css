@@ -45,11 +45,6 @@ h2 {
   margin-bottom: 14px;
 }
 
-h3 {
-  font-size: 15px;
-  margin: 0 0 10px;
-}
-
 .status-pill {
   border: 1px solid #235a97;
   border-radius: 999px;
@@ -148,41 +143,6 @@ th {
   line-height: 1.35;
 }
 
-.muted-line {
-  color: #5d6b7a;
-  margin: 0 0 14px;
-}
-
-.rule-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.rule-grid section {
-  border: 1px solid #e5ebf1;
-  border-radius: 8px;
-  padding: 14px;
-}
-
-.rule-list {
-  margin: 0;
-  padding-left: 0;
-  list-style: none;
-  line-height: 1.7;
-}
-
-.keyword-details {
-  margin-top: 16px;
-}
-
-.keyword-details summary {
-  cursor: pointer;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
 .check {
   display: inline-block;
   border-radius: 999px;
@@ -206,7 +166,6 @@ th {
   .topbar,
   .summary-grid,
   .tables,
-  .rule-grid,
   .metrics {
     grid-template-columns: 1fr;
     display: grid;

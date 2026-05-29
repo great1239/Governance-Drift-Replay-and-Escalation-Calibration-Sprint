@@ -212,7 +212,7 @@ Rule files:
 - [RULES.md](RULES.md)
 - [escalation_rules.json](escalation_rules.json)
 
-Each run also writes `rules_used.json` beside the other outputs, and the dashboard includes an `Active Rule Config` section showing priority order, escalation rank, escalation rules, and keyword groups.
+Each run also writes `rules_used.json` beside the other outputs. The dashboard stays focused on run results.
 
 ## Pressure Comparison
 
