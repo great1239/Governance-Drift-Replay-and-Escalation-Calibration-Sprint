@@ -12,6 +12,7 @@ Start with [REVIEW_PACKET.md](REVIEW_PACKET.md). It gives the inspection path, e
 
 For concrete proof points, inspect:
 
+- [INSPECTION_LOG.md](INSPECTION_LOG.md)
 - [PROOF_MATRIX.md](PROOF_MATRIX.md)
 - [PARSER_EXAMPLES.md](PARSER_EXAMPLES.md)
 
@@ -272,6 +273,7 @@ python governance_replay.py --input outputs/generated_updates.json --full --no-o
 |---|---|
 | `governance_replay.py` | main parser, replay engine, calibration logic, pressure comparison, and output writer |
 | `governance_stream_generator.py` | optional fake input generator for testing pressure |
+| `INSPECTION_LOG.md` | observed command outputs and artifact facts |
 | `PROOF_MATRIX.md` | concrete requirement-to-artifact proof map |
 | `PARSER_EXAMPLES.md` | raw input to parsed output examples |
 | `RULES.md` | readable explanation of the rule config |
