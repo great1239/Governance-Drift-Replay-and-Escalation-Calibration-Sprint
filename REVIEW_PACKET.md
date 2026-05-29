@@ -1,177 +1,243 @@
 # Review Packet
 
-## One-Line Summary
+This file is the reviewer shortcut. It explains what to inspect, what each artifact proves, how to reproduce the outputs, and what the project does not claim.
 
-This project keeps the previous operational drift monitor intact and adds governance replay plus escalation calibration on top.
+## Main Claim
 
-## Sprint Title Note
+Messy operational updates can be parsed into structured fields, classified with deterministic drift rules, checked for escalation calibration, replayed for consistency, and shown in inspectable dashboard/JSON/CSV outputs.
 
-`7-4-3` is treated as the interview sequence: 7-day task, 4-day task, and final 3-day task.
+## One-Minute Review Path
 
-It is not used as a technical rule. The implemented scope is operational drift monitoring, governance drift replay, execution pressure comparison, and escalation calibration.
+1. Open the main README:
+   [README.md](README.md)
 
-## Architecture
+2. Inspect the default dashboard:
+   [samples/00_default_example/dashboard.html](samples/00_default_example/dashboard.html)
 
-```text
-samples/00_default_example/input_updates.json
-        |
-        v
-governance_replay.py
-        |
-        v
-structured parsing + old taxonomy + deterministic replay + pressure comparison + escalation calibration
-        |
-        v
-runtime outputs folder
-samples evidence suite
+3. Inspect the default screenshot:
+   [samples/00_default_example/screenshot.png](samples/00_default_example/screenshot.png)
+
+4. Inspect the parsed JSON:
+   [samples/00_default_example/structured_updates.json](samples/00_default_example/structured_updates.json)
+
+5. Inspect the active rule snapshot:
+   [samples/00_default_example/rules_used.json](samples/00_default_example/rules_used.json)
+
+## How To Run
+
+Run the default full example:
+
+```powershell
+python governance_replay.py --full --no-open
 ```
 
-## Inspectable Proof
+Run with your own update file:
 
-- Default messy input: `samples/00_default_example/input_updates.json`
-- Rule file: `escalation_rules.json`
-- Rule explanation: `RULES.md`
-- Active rule snapshots: `samples/*/rules_used.json`
-- Curated evidence suite: `samples/`
-- Sample parsed outputs: `samples/*/structured_updates.json`
-- Sample replay proofs: `samples/*/replay_results.json`
-- Sample pressure outputs: `samples/*/pressure_comparison.json`
-- Sample CSV reports: `samples/*/escalation_report.csv`
-- Sample dashboards: `samples/*/dashboard.html`
-- Sample screenshots: `samples/*/screenshot.png`
+```powershell
+python governance_replay.py --input your_updates.json --full --no-open
+```
 
-## Sample Evidence
+Run in scheduled/stateful mode:
 
-The `samples` folder contains focused proof cases:
+```powershell
+python governance_replay.py --input samples/00_default_example/input_updates.json
+```
 
-- `01_aligned`: normal aligned case
-- `02_missing_evidence`: observability/evidence drift
-- `03_authority_drift`: missing approval and unauthorized actor
-- `04_replay_mismatch`: replay drift
-- `05_under_escalated`: escalation too low
-- `06_over_escalated`: escalation too high
-- `07_pressure_increase`: pressure comparison across runs
-- `08_ambiguous_input`: vague/mangled input handling
-- `09_conflict_handling`: multiple drift signals resolved by deterministic priority
+Stateful mode analyzes only records newer than the previous saved timestamp and writes `outputs/last_run_state.json`.
 
-Each sample includes the messy input, structured output, replay result, CSV, dashboard, screenshot, and notes.
+## Core Files To Inspect
 
-## Previous Features Kept
+Main program:
+[governance_replay.py](governance_replay.py)
 
-- Raw operational updates are parsed into structured fields.
-- The old operational taxonomy is still visible:
-  - `aligned`
-  - `replay-risk`
-  - `authority-risk`
-  - `observability-risk`
-  - `integration-risk`
-  - `unclear/incomplete`
-- The four original metrics are still calculated:
-  - structured
-  - observable
-  - deterministic
-  - governance-safe
-- Scheduled mode analyzes only new records after the last saved timestamp.
-- Pressure comparison checks whether metric rates drop when record volume increases.
-- Dashboard styling remains in a separate CSS file.
-- The old behavior is preserved inside `governance_replay.py` and `governance_stream_generator.py` without duplicate wrapper scripts.
+Readable rule explanation:
+[RULES.md](RULES.md)
 
-## What Is Parsed
+Machine-readable rule config:
+[escalation_rules.json](escalation_rules.json)
 
-Each messy update is converted into:
+Optional messy test stream generator:
+[governance_stream_generator.py](governance_stream_generator.py)
 
-- case ID
-- timestamp
-- service
-- system status
-- blockers
-- dependencies
-- replay risks
-- observability risks
-- governance risks
-- evidence state
-- approval state
-- actor authorization state
-- replay state
-- owner state
-- dependency state
-- drift labels
-- secondary drift labels
-- conflict resolution
-- expected escalation
-- actual escalation
-- escalation calibration
-- recommended action
+Dashboard stylesheet:
+[dashboard.css](dashboard.css)
 
-## Pressure Comparison
+Sample evidence folder:
+[samples/](samples/)
 
-This carries forward the useful part of the previous task.
+## Expected Runtime Outputs
 
-Each run saves:
+When the program runs, it writes:
 
-- total case count
-- structured rate
-- observable rate
-- deterministic rate
-- governance-safe rate
-- drift counts
-- calibration counts
+```text
+outputs/structured_updates.json
+outputs/replay_results.json
+outputs/pressure_comparison.json
+outputs/rules_used.json
+outputs/escalation_report.csv
+outputs/dashboard.html
+outputs/dashboard.css
+```
 
-The next run compares against that saved state. If case count increases, pressure increased. If any metric drops while pressure increased, the dashboard makes that visible.
+The runtime `outputs/` folder is git-ignored because curated proof outputs are already saved inside `samples/`.
 
-## New Features Added
+## Assignment Coverage
 
-- Governance drift labels such as `authority-drift`, `replay-drift`, `evidence-drift`, and `escalation-drift`.
-- Expected escalation is calculated from visible rules.
-- The loaded rule config is written to `rules_used.json` for every run.
-- Actual escalation is extracted from the update.
-- Calibration is marked as `calibrated`, `under-escalated`, or `over-escalated`.
-- The same selected input batch is replayed twice to prove deterministic output.
+Structured update parser:
+The program parses messy text into case ID, timestamp, service, status, blockers, dependencies, replay risks, observability risks, governance risks, evidence state, approval state, authorization state, replay state, owner state, dependency state, drift labels, escalation fields, checks, and action.
 
-## Deterministic Rule Priority
+Drift classification logic:
+The program classifies into `aligned`, `authority-drift`, `replay-drift`, `escalation-drift`, `evidence-drift`, `ownership-drift`, `dependency-drift`, and `ambiguous`. It also preserves the earlier operational taxonomy: `aligned`, `replay-risk`, `authority-risk`, `observability-risk`, `integration-risk`, and `unclear/incomplete`.
 
-If one update has multiple drift signals, primary drift is chosen in this order:
+Operational dashboard:
+Each sample has `dashboard.html` and a full-page `screenshot.png`.
 
-1. `authority-drift`
-2. `replay-drift`
-3. `escalation-drift`
-4. `evidence-drift`
-5. `ownership-drift`
-6. `dependency-drift`
-7. `ambiguous`
-8. `aligned`
+Governance summary:
+Each dashboard contains the compressed run summary, drift counts, calibration counts, metric rates, pressure comparison, case replay results, and replay detail fields.
 
-The priority is visible in `escalation_rules.json`.
+Rule/config visibility:
+Rules are visible in `RULES.md`, `escalation_rules.json`, and every generated `rules_used.json`.
 
-The conflict proof is saved in `samples/09_conflict_handling`. Each row keeps all matching labels in `drift_types` and explains the selected primary label in `conflict_resolution`.
+Deterministic replay:
+Each run evaluates the selected input twice and records whether both passes match.
 
-## Escalation Calibration
+Execution pressure comparison:
+Stateful mode compares current run metrics against the previous run snapshot.
 
-Escalation levels are ranked:
+## Evidence Map
 
-1. `none`
-2. `service-owner`
-3. `team-lead`
-4. `incident-commander`
-5. `governance-review`
+### 00 Default Example
 
-The program marks each case as:
+Proves: baseline end-to-end run  
+Notes: [notes](samples/00_default_example/notes.md)  
+Input: [input](samples/00_default_example/input_updates.json)  
+Parsed JSON: [structured output](samples/00_default_example/structured_updates.json)  
+Dashboard: [dashboard](samples/00_default_example/dashboard.html)  
+Screenshot: [screenshot](samples/00_default_example/screenshot.png)
 
-- `calibrated`
-- `under-escalated`
-- `over-escalated`
+### 01 Aligned
 
-## Failure Handling
+Proves: normal aligned behavior  
+Notes: [notes](samples/01_aligned/notes.md)  
+Input: [input](samples/01_aligned/input_updates.json)  
+Parsed JSON: [structured output](samples/01_aligned/structured_updates.json)  
+Dashboard: [dashboard](samples/01_aligned/dashboard.html)  
+Screenshot: [screenshot](samples/01_aligned/screenshot.png)
 
-- Vague input becomes `ambiguous`.
-- Missing evidence becomes `evidence-drift`.
-- Approval or authorization problems become `authority-drift`.
-- Replay mismatch becomes `replay-drift`.
-- Wrong escalation level becomes `escalation-drift`.
+### 02 Missing Evidence
+
+Proves: observability/evidence drift  
+Notes: [notes](samples/02_missing_evidence/notes.md)  
+Input: [input](samples/02_missing_evidence/input_updates.json)  
+Parsed JSON: [structured output](samples/02_missing_evidence/structured_updates.json)  
+Dashboard: [dashboard](samples/02_missing_evidence/dashboard.html)  
+Screenshot: [screenshot](samples/02_missing_evidence/screenshot.png)
+
+### 03 Authority Drift
+
+Proves: missing approval and unauthorized actor handling  
+Notes: [notes](samples/03_authority_drift/notes.md)  
+Input: [input](samples/03_authority_drift/input_updates.json)  
+Parsed JSON: [structured output](samples/03_authority_drift/structured_updates.json)  
+Dashboard: [dashboard](samples/03_authority_drift/dashboard.html)  
+Screenshot: [screenshot](samples/03_authority_drift/screenshot.png)
+
+### 04 Replay Mismatch
+
+Proves: replay drift handling  
+Notes: [notes](samples/04_replay_mismatch/notes.md)  
+Input: [input](samples/04_replay_mismatch/input_updates.json)  
+Parsed JSON: [structured output](samples/04_replay_mismatch/structured_updates.json)  
+Dashboard: [dashboard](samples/04_replay_mismatch/dashboard.html)  
+Screenshot: [screenshot](samples/04_replay_mismatch/screenshot.png)
+
+### 05 Under Escalated
+
+Proves: escalation lower than expected  
+Notes: [notes](samples/05_under_escalated/notes.md)  
+Input: [input](samples/05_under_escalated/input_updates.json)  
+Parsed JSON: [structured output](samples/05_under_escalated/structured_updates.json)  
+Dashboard: [dashboard](samples/05_under_escalated/dashboard.html)  
+Screenshot: [screenshot](samples/05_under_escalated/screenshot.png)
+
+### 06 Over Escalated
+
+Proves: escalation higher than expected  
+Notes: [notes](samples/06_over_escalated/notes.md)  
+Input: [input](samples/06_over_escalated/input_updates.json)  
+Parsed JSON: [structured output](samples/06_over_escalated/structured_updates.json)  
+Dashboard: [dashboard](samples/06_over_escalated/dashboard.html)  
+Screenshot: [screenshot](samples/06_over_escalated/screenshot.png)
+
+### 07 Pressure Increase
+
+Proves: stateful pressure comparison across two runs  
+Notes: [notes](samples/07_pressure_increase/notes.md)  
+Baseline input: [baseline input](samples/07_pressure_increase/baseline_input_updates.json)  
+Second input: [input](samples/07_pressure_increase/input_updates.json)  
+Pressure output: [pressure comparison](samples/07_pressure_increase/pressure_comparison.json)  
+Dashboard: [dashboard](samples/07_pressure_increase/dashboard.html)  
+Screenshot: [screenshot](samples/07_pressure_increase/screenshot.png)
+
+### 08 Ambiguous Input
+
+Proves: vague/mangled input handling  
+Notes: [notes](samples/08_ambiguous_input/notes.md)  
+Input: [input](samples/08_ambiguous_input/input_updates.json)  
+Parsed JSON: [structured output](samples/08_ambiguous_input/structured_updates.json)  
+Dashboard: [dashboard](samples/08_ambiguous_input/dashboard.html)  
+Screenshot: [screenshot](samples/08_ambiguous_input/screenshot.png)
+
+### 09 Conflict Handling
+
+Proves: deterministic priority when one update contains multiple drift signals  
+Notes: [notes](samples/09_conflict_handling/notes.md)  
+Input: [input](samples/09_conflict_handling/input_updates.json)  
+Parsed JSON: [structured output](samples/09_conflict_handling/structured_updates.json)  
+Dashboard: [dashboard](samples/09_conflict_handling/dashboard.html)  
+Screenshot: [screenshot](samples/09_conflict_handling/screenshot.png)
+
+## Reproduction Commands
+
+Reproduce one sample:
+
+```powershell
+python governance_replay.py --input samples/03_authority_drift/input_updates.json --output-dir samples/03_authority_drift --full --no-open
+```
+
+Reproduce the pressure sample:
+
+```powershell
+python governance_replay.py --input samples/07_pressure_increase/baseline_input_updates.json --output-dir samples/07_pressure_increase --state-file samples/07_pressure_increase/last_run_state.json --no-open
+python governance_replay.py --input samples/07_pressure_increase/input_updates.json --output-dir samples/07_pressure_increase --state-file samples/07_pressure_increase/last_run_state.json --no-open
+```
+
+## Reviewer Checklist
+
+- [ ] Main script runs with `python governance_replay.py --full --no-open`
+- [ ] Parsed JSON exists in `structured_updates.json`
+- [ ] Rule snapshot exists in `rules_used.json`
+- [ ] Dashboard exists as `dashboard.html`
+- [ ] Screenshot exists as `screenshot.png`
+- [ ] Drift classifications are visible per case
+- [ ] Escalation calibration is visible per case
+- [ ] Deterministic replay result is visible
+- [ ] Pressure comparison is visible in sample `07_pressure_increase`
+- [ ] Conflict handling is visible in sample `09_conflict_handling`
+
+## Known Limitations
+
+- This is rule-based, not machine learning.
+- It only detects wording covered by the configured keyword rules.
 - Malformed JSON stops the run instead of guessing.
+- It does not connect to a live production system by itself.
+- Scheduling is expected to be handled externally by Task Scheduler, cron, or a similar scheduler.
+- The sample stream generator is only for testing and demonstration.
+
+## What Not To Overclaim
+
+This project does not claim to be a full incident-management platform, security product, or universal log parser. It is a bounded prototype for making messy governance/operations updates structured, visible, deterministic, and reviewable.
 
 ## Final Reflection
 
-The safest operational output is not the most fluent explanation. It is the one that can be replayed, inspected, and challenged.
-
-This project keeps the system bounded by using explicit rules, visible outputs, and deterministic replay instead of open-ended generation.
+The safest operational output is not the most fluent explanation. It is the one that can be replayed, inspected, challenged, and reproduced from visible rules.

@@ -6,6 +6,10 @@ Make messy operational updates structured, observable, deterministic, and safely
 
 The project takes raw governance/operations updates, classifies drift, checks escalation calibration, and writes inspectable JSON, CSV, and HTML outputs.
 
+## Reviewer Shortcut
+
+Start with [REVIEW_PACKET.md](REVIEW_PACKET.md). It gives the inspection path, evidence map, reproduction commands, checklist, and limitations.
+
 ## Quick Start
 
 Run the default example:
